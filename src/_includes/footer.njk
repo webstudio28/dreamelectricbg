@@ -1,0 +1,40 @@
+<footer class="bg-[#0c1222] text-white py-8 md:py-10">
+  <div class="container-custom">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+      <a href="{{ '/' | url }}" class="inline-block" aria-label="{{ site.brand.name }} home">
+        <img src="{{ '/assets/images/logo-dark.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-8 w-auto opacity-95 hover:opacity-100 transition-opacity">
+      </a>
+      <nav class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-white/70 hover:text-white" aria-label="Legal">
+        {% for item in site.nav.footer %}
+          {% if item.modalId %}
+          <button type="button" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded" data-modal-open="{{ item.modalId }}">{{ item.label }}</button>
+          {% else %}
+          <a href="{{ item.url | url }}">{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+    <p class="mt-5 text-white/50 text-xs">&copy; {{ site.currentYear }} {{ site.brand.name }}</p>
+  </div>
+</footer>
+
+{# Policy modals — dummy text from home.policies #}
+{% for key, policy in home.policies %}
+<div id="modal-{{ key }}" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-{{ key }}-title" role="dialog" hidden>
+  <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
+  <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col text-brand-blue">
+    <div class="flex items-center justify-between p-6 border-b border-gray-200">
+      <h2 id="modal-{{ key }}-title" class="text-xl font-bold">{{ policy.title }}</h2>
+      <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-6 overflow-y-auto flex-1 prose prose-sm max-w-none">
+      <p>{{ policy.body }}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<script src="{{ '/assets/js/modal.js' | url }}" defer></script>
+<script src="{{ '/assets/js/popular-transfers-strip.js' | url }}" defer></script>

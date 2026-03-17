@@ -1,0 +1,45 @@
+<header class="border-b border-brand-blue/10 bg-white/95 sticky top-0 z-40">
+  <div class="container-custom flex items-center justify-between py-4">
+    <a href="{{ '/' | url }}" class="flex items-center gap-2" aria-label="{{ site.brand.name }} home">
+      {% if site.brand.logo %}
+      <img src="{{ '/assets/images/logo-light.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-8 md:h-9 w-auto">
+      {% else %}
+      <span class="font-semibold text-lg text-brand-blue">{{ site.brand.name }}</span>
+      {% endif %}
+    </a>
+    <nav class="hidden lg:flex items-center gap-6" aria-label="Main">
+      {% for item in site.nav.header %}
+        {% if item.isCta %}
+          <a href="{{ item.url | url }}" class="px-4 py-2 rounded-2xl bg-brand-accent text-brand-blue font-semibold hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ item.label }}</a>
+        {% else %}
+          <a href="{{ item.url | url }}" class="text-brand-blue hover:opacity-80">{{ item.label }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    <button type="button" id="mobile-menu-toggle" class="mobile-burger lg:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg text-brand-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
+      <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out mb-1.5"></span>
+      <span class="burger-line block w-6 h-0.5 bg-current rounded transition-all duration-300 ease-in-out"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Backdrop: blurred + darkened when menu open -->
+<div id="mobile-menu-backdrop" class="fixed inset-0 z-[44] lg:hidden bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true" hidden></div>
+<!-- Mobile menu: 85% width from right, white bg, close button -->
+<div id="mobile-menu" class="mobile-menu-panel fixed top-0 right-0 bottom-0 w-[85%] max-w-md z-[45] lg:hidden transform translate-x-full transition-transform duration-300 ease-in-out bg-white shadow-2xl" aria-hidden="true" hidden>
+  <div class="h-full flex flex-col pt-16 pb-8 px-6 overflow-y-auto">
+    <button type="button" id="mobile-menu-close" class="absolute top-4 right-4 p-2 rounded-full text-brand-blue hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <nav class="flex flex-col gap-2 text-brand-blue mt-4" aria-label="Mobile">
+      {% for item in site.nav.header %}
+        {% if item.isCta %}
+          <a href="{{ item.url | url }}" class="mobile-menu-link rounded-2xl bg-brand-accent text-brand-blue font-semibold px-5 py-4 text-center hover:opacity-95 w-full">{{ item.label }}</a>
+        {% else %}
+          <a href="{{ item.url | url }}" class="mobile-menu-link rounded-2xl border border-brand-blue/20 px-5 py-4 hover:bg-brand-blue/5 transition-colors">{{ item.label }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</div>

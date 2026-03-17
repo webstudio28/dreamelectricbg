@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll for anchor links + offset so target sits a bit lower (space above) */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+    overflow-x: hidden;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  @supports (overflow: clip) {
+    html {
+      overflow-x: clip;
+    }
+    body {
+      overflow-x: clip;
+    }
+  }
+}
+
+/* When a modal is open, clamp body so the page can't stretch horizontally */
+body.modal-open {
+  overflow-x: hidden !important;
+}
+@supports (overflow: clip) {
+  body.modal-open {
+    overflow-x: clip !important;
+  }
+}
+
+/* Brand defaults (overridden by base layout from site.config) */
+:root {
+  --color-brand-buttercream: #FDFBF7;
+  --color-brand-blue: #1E3A5F;
+  --color-brand-accent: #2D5A3D;
+}
+
+/* Template utility classes (alignment docs) */
+@layer components {
+  .container-custom {
+    @apply max-w-screen-xl mx-auto px-4 md:px-6;
+  }
+  /* Services strip: left aligned with container-custom, right to edge */
+  .services-strip-inner {
+    padding-left: max(1rem, calc((100vw - 80rem) / 2 + 1rem));
+    padding-right: 1rem;
+  }
+  @media (min-width: 768px) {
+    .services-strip-inner {
+      padding-left: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem));
+      padding-right: 1.5rem;
+    }
+  }
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  /* Popular transfers strip: transformed marquee can cause horizontal overflow on mobile */
+  .popular-transfers-strip-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    contain: paint;
+    /* allow programmatic scrolling without showing scrollbars */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    touch-action: pan-y;
+  }
+  .popular-transfers-strip-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  @supports (overflow: clip) {
+    .popular-transfers-strip-wrapper {
+      overflow-x: clip;
+    }
+  }
+
+  /* Mobile burger → X animation */
+  #mobile-menu-toggle.active .burger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  #mobile-menu-toggle.active .burger-line:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu-toggle.active .burger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* Hide scrollbar on mobile menu panel */
+  .mobile-menu-panel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    contain: paint;
+  }
+  .mobile-menu-panel::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Hide scrollbar on horizontal strips (outside @layer so it wins) */
+.drag-scroll.scrollbar-hide,
+.scrollbar-hide {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  overflow-y: hidden;
+}
+.drag-scroll.scrollbar-hide::-webkit-scrollbar,
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+}
+.drag-scroll.scrollbar-hide::-webkit-scrollbar-track,
+.scrollbar-hide::-webkit-scrollbar-track {
+  display: none !important;
+}
+
+/* Keep horizontal swipes inside strips (avoid page panning) */
+.drag-scroll {
+  overscroll-behavior-x: contain;
+}

@@ -1,0 +1,71 @@
+---
+layout: base.njk
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/proekti/{{ project.slug }}/"
+eleventyComputed:
+  title: "{{ project.title }}"
+  description: "{{ project.shortDescription }}"
+---
+
+<main>
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <a href="{{ '/proekti/' | url }}" class="text-sm font-semibold text-brand-blue hover:underline">← Всички проекти</a>
+
+      <div class="mt-4 grid gap-8 lg:grid-cols-2 items-start">
+        <div class="order-2 lg:order-1">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-blue leading-tight">{{ project.title }}</h1>
+          <p class="mt-4 text-brand-blue/80 leading-relaxed max-w-2xl">{{ project.shortDescription }}</p>
+
+          <div class="mt-6 flex flex-wrap gap-2 text-xs text-brand-blue/80">
+            {% if project.location %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-brand-buttercream">{{ project.location }}</span>{% endif %}
+            {% if project.type %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-brand-buttercream">{{ project.type }}</span>{% endif %}
+            {% if project.capacityKwp %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-brand-buttercream">{{ project.capacityKwp }} kWp</span>{% endif %}
+            {% if project.year %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-brand-buttercream">{{ project.year }}</span>{% endif %}
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            {% from "macros/ui.njk" import button %}
+            {{ button('Запитване', '/kontakti/', 'primary') }}
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="rounded-3xl overflow-hidden shadow-lg border border-brand-blue/10">
+            <img src="{{ ('/assets/images/' ~ project.images[0]) | url }}" alt="{{ project.title }}" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if project.longDescription %}
+  <section class="section-padding bg-brand-buttercream">
+    <div class="container-custom">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-blue">Описание</h2>
+      <div class="mt-6 rounded-3xl bg-white border border-brand-blue/10 shadow-sm p-6 md:p-8">
+        <p class="text-brand-blue/90 leading-relaxed whitespace-pre-line">{{ project.longDescription }}</p>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if project.images and project.images.length > 1 %}
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-blue">Галерия</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {% for img in project.images %}
+        <div class="rounded-3xl overflow-hidden border border-brand-blue/10 shadow-sm">
+          <img src="{{ ('/assets/images/' ~ img) | url }}" alt="{{ project.title }} - снимка {{ loop.index }}" class="w-full aspect-[4/3] object-cover">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</main>
+

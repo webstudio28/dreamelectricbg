@@ -1,0 +1,47 @@
+<section class="section-padding bg-brand-buttercream" id="about">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader %}
+    {% set a = home.about %}
+    {# Header: full width, text-left (like frigobg Why choose us) #}
+    <div class="w-full text-left mb-10 md:mb-12">
+      {{ sectionHeader(a.eyebrow, a.title, a.description) }}
+    </div>
+
+    <div class="grid lg:grid-cols-2 items-stretch gap-12">
+      {# Left: image, full height, rounded-2xl, shadow #}
+      <div class="order-1 relative">
+        <div class="rounded-2xl overflow-hidden shadow-xl relative h-full min-h-[280px]">
+          <img src="{{ ('/assets/images/' ~ a.image) | url }}" alt="" class="w-full h-full object-cover rounded-2xl" loading="lazy">
+        </div>
+      </div>
+
+      {# Right: paragraphs, highlight box(es), CTA #}
+      <div class="order-2 flex flex-col justify-between gap-6">
+        <div class="flex flex-col gap-4 md:gap-6">
+          <p class="text-brand-blue/90 leading-relaxed">{{ a.paragraph1 }}</p>
+          <p class="text-brand-blue/90 leading-relaxed">{{ a.paragraph2 }}</p>
+          {% for feat in a.features %}
+          <div class="rounded-2xl bg-white border border-brand-blue/10 shadow-sm px-5 py-4">
+            <div class="flex items-start gap-3">
+              <div class="w-5 h-5 flex-shrink-0 mt-0.5 rounded-full bg-brand-accent/20 flex items-center justify-center">
+                <span class="text-brand-accent text-xs font-bold">✓</span>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-brand-blue">{{ feat.title }}</h3>
+                <p class="text-sm text-brand-blue/80 mt-1">{{ feat.text }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% if a.cta and a.cta.label %}
+        <div class="w-full mt-2">
+          <a href="{{ a.cta.url | url }}" class="w-full flex items-center justify-center rounded-2xl bg-brand-accent text-brand-blue px-8 py-3 text-base font-semibold shadow-md hover:opacity-95 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">
+            {{ a.cta.label }}
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

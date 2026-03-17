@@ -1,0 +1,11 @@
+{# CTA — alignment only (section-padding + container-custom); layout redo later #}
+<section class="section-padding bg-gray-100" id="contact">
+  <div class="container-custom">
+    {% set c = home.cta if home and home.cta else {} %}
+    <h2 class="text-xl font-semibold mb-2 text-left">{{ c.title | default('Get in touch') }}</h2>
+    <p class="mb-4 text-left text-gray-700">{{ c.description | default('Ready to start? Reach out.') }}</p>
+    {% if c.button and c.button.label %}
+    <div class="flex justify-end"><a href="{{ c.button.url }}" class="px-4 py-2 rounded-md bg-brand-primary text-white font-medium">{{ c.button.label }}</a></div>
+    {% endif %}
+  </div>
+</section>

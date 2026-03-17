@@ -1,0 +1,60 @@
+---
+layout: base.njk
+title: За нас
+description: Монтаж на фотоволтаични системи „до ключ“ в Пловдив и региона — проектиране, доставка, монтаж и мониторинг.
+---
+
+<main>
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <p class="text-sm uppercase tracking-wide text-brand-blue/80 mb-2">За нас</p>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-blue leading-tight">Екип, който поема процеса от А до Я</h1>
+      <p class="mt-4 text-brand-blue/80 max-w-3xl leading-relaxed">
+        Работим с ясни стъпки и реални очаквания: оглед, проектиране, доставка, монтаж, пуск и мониторинг.
+        Целта е системата да е безопасна, оптимално оразмерена и да произвежда стабилно.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-brand-buttercream">
+    <div class="container-custom">
+      {% from "macros/ui.njk" import sectionHeader %}
+      {{ sectionHeader('Подход', 'Какво получавате от нас', 'Фокус върху качество на изпълнение, прозрачна комуникация и последващо съдействие.') }}
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-3xl bg-white border border-brand-blue/10 shadow-sm p-6">
+          <h3 class="text-lg font-semibold text-brand-blue">Практично оразмеряване</h3>
+          <p class="mt-2 text-sm text-brand-blue/80 leading-relaxed">Съобразяваме се с потреблението, мястото и бъдещите ви планове (батерия, зарядна, разширение).</p>
+        </div>
+        <div class="rounded-3xl bg-white border border-brand-blue/10 shadow-sm p-6">
+          <h3 class="text-lg font-semibold text-brand-blue">Чист монтаж и безопасност</h3>
+          <p class="mt-2 text-sm text-brand-blue/80 leading-relaxed">Работим организирано, с внимание към кабели, защити и детайли, които влияят на надеждността.</p>
+        </div>
+        <div class="rounded-3xl bg-white border border-brand-blue/10 shadow-sm p-6">
+          <h3 class="text-lg font-semibold text-brand-blue">Мониторинг</h3>
+          <p class="mt-2 text-sm text-brand-blue/80 leading-relaxed">След монтажа настройваме мониторинг и при отклонения съдействаме за бърза проверка.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pt-8 md:pt-10 pb-16 md:pb-24">
+    <div class="container-custom">
+      <div class="relative rounded-3xl overflow-hidden min-h-[320px] md:min-h-[280px] flex flex-col md:flex-row md:items-center md:justify-between gap-8 p-8 md:p-12">
+        <div class="absolute inset-0 z-0">
+          <img src="{{ '/assets/images/cta-bg.jpg' | url }}" alt="" class="w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-black/70" aria-hidden="true"></div>
+        </div>
+        <div class="relative z-10 text-white max-w-xl">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">Нека го обсъдим</h2>
+          <p class="text-white/90">Кажете ни какъв е обектът и какво целите — ще предложим най-подходящото решение.</p>
+        </div>
+        <div class="relative z-10">
+          {% from "macros/ui.njk" import button %}
+          {{ button('Контакти', '/kontakti/', 'primary') }}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

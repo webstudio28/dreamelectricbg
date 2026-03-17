@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="{% if site and site.brand %}{{ site.brand.language }}{% else %}en{% endif %}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% else %}Landing{% endif %}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
+  <link rel="canonical" href="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ page.url | url }}{% endif %}">
+  <meta property="og:url" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ page.url | url }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% endif %}">
+  <meta property="og:description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
+  <meta property="og:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
+  <meta name="twitter:card" content="{% if site and site.seo %}{{ site.seo.twitterCard }}{% else %}summary_large_image{% endif %}">
+  <meta name="twitter:title" content="{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% endif %}">
+  <meta name="twitter:description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
+  <meta name="twitter:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
+  <link rel="icon" href="{{ '/favicon.png' | url }}" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+</head>
+<body class="font-sans bg-brand-buttercream"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
+  {% include "header.njk" %}
+  {{ content | safe }}
+  {% include "footer.njk" %}
+
+  {# Service detail modal (outside sections so it doesn't affect services strip layout); content set by modal.js when "See more" is clicked #}
+  <div id="modal-service-detail" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-service-detail-title" role="dialog" hidden>
+    <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
+    <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col">
+      <div class="flex items-center justify-between p-6 border-b border-gray-200">
+        <h2 id="modal-service-detail-title" class="text-xl font-bold text-brand-blue">Service</h2>
+        <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div id="modal-service-detail-body" class="p-6 overflow-y-auto flex-1 text-brand-blue/90"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('mobile-menu-toggle');
+      var menu = document.getElementById('mobile-menu');
+      var backdrop = document.getElementById('mobile-menu-backdrop');
+      var body = document.body;
+      var links = document.querySelectorAll('.mobile-menu-link');
+      var closeTimer = null;
+
+      function openMenu() {
+        if (closeTimer) {
+          window.clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+        toggle.classList.add('active');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close menu');
+        menu.removeAttribute('hidden');
+        menu.classList.add('translate-x-full');
+        menu.classList.remove('translate-x-0');
+        menu.setAttribute('aria-hidden', 'false');
+        if (backdrop) {
+          backdrop.removeAttribute('hidden');
+          backdrop.setAttribute('aria-hidden', 'false');
+        }
+        body.style.overflow = 'hidden';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            menu.classList.remove('translate-x-full');
+            menu.classList.add('translate-x-0');
+            if (backdrop) {
+              backdrop.classList.remove('opacity-0', 'pointer-events-none');
+              backdrop.classList.add('opacity-100', 'pointer-events-auto');
+            }
+          });
+        });
+      }
+
+      function closeMenu() {
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        menu.classList.add('translate-x-full');
+        menu.classList.remove('translate-x-0');
+        menu.setAttribute('aria-hidden', 'true');
+        if (backdrop) {
+          backdrop.classList.add('opacity-0', 'pointer-events-none');
+          backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+          backdrop.setAttribute('aria-hidden', 'true');
+        }
+        body.style.overflow = '';
+
+        // After transition completes, fully hide to prevent any layout overflow on small screens
+        closeTimer = window.setTimeout(function () {
+          menu.setAttribute('hidden', '');
+          if (backdrop) backdrop.setAttribute('hidden', '');
+          closeTimer = null;
+        }, 320);
+      }
+
+      var closeBtn = document.getElementById('mobile-menu-close');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function () {
+          if (menu.classList.contains('translate-x-full')) openMenu();
+          else closeMenu();
+        });
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (backdrop) backdrop.addEventListener('click', closeMenu);
+        links.forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !menu.classList.contains('translate-x-full')) closeMenu();
+        });
+      }
+    })();
+
+    // Drag-to-scroll for horizontal strips (e.g. services)
+    (function () {
+      var containers = document.querySelectorAll('.drag-scroll');
+      containers.forEach(function (el) {
+        var isDown = false;
+        var startX = 0;
+        var scrollLeftStart = 0;
+        function onDown(clientX) {
+          isDown = true;
+          startX = clientX;
+          scrollLeftStart = el.scrollLeft;
+        }
+        function onMove(clientX) {
+          if (!isDown) return;
+          el.scrollLeft = scrollLeftStart - (clientX - startX);
+        }
+        function onUp() { isDown = false; }
+        el.addEventListener('mousedown', function (e) {
+          if (e.button !== 0) return;
+          onDown(e.clientX);
+          e.preventDefault();
+        });
+        window.addEventListener('mousemove', function (e) { onMove(e.clientX); });
+        window.addEventListener('mouseup', onUp);
+        el.addEventListener('touchstart', function (e) { onDown(e.touches[0].clientX); }, { passive: true });
+        window.addEventListener('touchmove', function (e) { onMove(e.touches[0].clientX); }, { passive: true });
+        window.addEventListener('touchend', onUp);
+      });
+    })();
+
+    // Services strip: scroll by one card (prev/next buttons)
+    (function () {
+      var strip = document.getElementById('services-strip');
+      var prevBtn = document.getElementById('services-scroll-prev');
+      var nextBtn = document.getElementById('services-scroll-next');
+      if (!strip || !prevBtn || !nextBtn) return;
+      var inner = strip.querySelector('.flex');
+      var firstCard = inner && inner.querySelector('div');
+      var gap = 32;
+      function getStep() {
+        return firstCard ? firstCard.offsetWidth + gap : 304;
+      }
+      function updateButtons() {
+        prevBtn.disabled = strip.scrollLeft <= 0;
+        nextBtn.disabled = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 1;
+      }
+      prevBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: getStep(), behavior: 'smooth' });
+      });
+      strip.addEventListener('scroll', updateButtons);
+      updateButtons();
+    })();
+
+    // Fleet strip: scroll by one card (prev/next buttons)
+    (function () {
+      var strip = document.getElementById('fleets-strip');
+      var prevBtn = document.getElementById('fleets-scroll-prev');
+      var nextBtn = document.getElementById('fleets-scroll-next');
+      if (!strip || !prevBtn || !nextBtn) return;
+      var inner = strip.querySelector('.flex');
+      var firstCard = inner && inner.querySelector('div');
+      var gap = 32;
+      function getStep() {
+        return firstCard ? firstCard.offsetWidth + gap : 304;
+      }
+      function updateButtons() {
+        prevBtn.disabled = strip.scrollLeft <= 0;
+        nextBtn.disabled = strip.scrollLeft >= strip.scrollWidth - strip.clientWidth - 1;
+      }
+      prevBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: -getStep(), behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', function () {
+        strip.scrollBy({ left: getStep(), behavior: 'smooth' });
+      });
+      strip.addEventListener('scroll', updateButtons);
+      updateButtons();
+    })();
+  </script>
+</body>
+</html>

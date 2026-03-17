@@ -1,0 +1,38 @@
+---
+layout: base.njk
+title: Проекти
+description: Примерни изпълнени проекти — фотоволтаични системи за дома и бизнеса, навеси и наземни решения.
+---
+
+<main>
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <p class="text-sm uppercase tracking-wide text-brand-blue/80 mb-2">Проекти</p>
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-blue">Реални изпълнения</h1>
+      <p class="mt-4 text-brand-blue/80 max-w-3xl leading-relaxed">
+        Подбираме решение според обекта и целите. Тук показваме примерни проекти (структурата е готова за вашите реални данни).
+      </p>
+
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {% for p in projects %}
+        <a href="{{ ('/proekti/' ~ p.slug ~ '/') | url }}" class="group rounded-3xl overflow-hidden border border-brand-blue/10 bg-brand-buttercream shadow-sm hover:shadow-lg transition">
+          <img src="{{ ('/assets/images/' ~ p.images[0]) | url }}" alt="{{ p.title }}" class="w-full aspect-[4/3] object-cover">
+          <div class="p-6">
+            <h2 class="text-lg font-semibold text-brand-blue group-hover:underline">{{ p.title }}</h2>
+            <p class="mt-2 text-sm text-brand-blue/80 leading-relaxed line-clamp-2">{{ p.shortDescription }}</p>
+            <div class="mt-4 flex flex-wrap gap-2 text-xs text-brand-blue/80">
+              {% if p.location %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-white/70">{{ p.location }}</span>{% endif %}
+              {% if p.capacityKwp %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-white/70">{{ p.capacityKwp }} kWp</span>{% endif %}
+              {% if p.year %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-white/70">{{ p.year }}</span>{% endif %}
+            </div>
+            <div class="mt-5 inline-flex items-center justify-center rounded-2xl bg-brand-accent text-brand-blue font-semibold px-4 py-2 text-sm hover:opacity-95">
+              Виж проекта
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>
+

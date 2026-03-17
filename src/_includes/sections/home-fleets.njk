@@ -1,0 +1,44 @@
+<section class=" section-padding bg-white overflow-x-hidden max-w-full" id="fleets">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader, icon %}
+    {% set f = home.fleets %}
+    <div class="flex flex-nowrap items-center justify-between gap-4">
+      <div class="min-w-0 flex-1">
+        {{ sectionHeader(f.eyebrow, f.title, f.subtitle) }}
+      </div>
+      <div class="flex items-center gap-1 shrink-0" aria-hidden="true">
+        <button type="button" id="fleets-scroll-prev" class="fleets-nav-btn w-9 h-9 rounded-full border-2 border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Scroll fleet left">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button type="button" id="fleets-scroll-next" class="fleets-nav-btn w-9 h-9 rounded-full border-2 border-brand-blue text-brand-blue flex items-center justify-center hover:bg-brand-blue hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 disabled:opacity-40 disabled:pointer-events-none" aria-label="Scroll fleet right">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="fleets-strip" class="w-full drag-scroll overflow-x-auto pb-8 cursor-grab active:cursor-grabbing select-none scrollbar-hide">
+    <div class="flex gap-8 services-strip-inner min-w-max mb-2">
+      {% for item in f.items %}
+      <div class="flex flex-col flex-shrink-0 w-64 md:w-72 rounded-3xl overflow-hidden shadow-lg {% if item.luxury %}ring-2 ring-brand-blue{% endif %}">
+        <div class="relative aspect-[4/3] bg-brand-blue">
+          <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+          <div class="absolute inset-0 bg-black/40" aria-hidden="true"></div>
+          <span class="absolute top-4 left-4 text-white font-bold text-lg drop-shadow">{{ item.name }}</span>
+        </div>
+        <div class="p-5 bg-white">
+          <p class="text-brand-blue/90 mb-4 text-sm">{{ item.description }}</p>
+          <div class="grid grid-cols-2 gap-2 text-xs mb-4">
+            {% for feat in item.features %}
+            <div class="flex items-center gap-2 text-brand-blue/80">
+              {{ icon(feat.icon) }}
+              <span>{{ feat.label }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          <button type="button" onclick="typeof initMyOrder === 'function' && initMyOrder();" class="w-full rounded-xl bg-brand-blue text-white font-semibold px-3 py-2.5 text-xs hover:bg-brand-blue/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ f.cta | default('Book now') }}</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

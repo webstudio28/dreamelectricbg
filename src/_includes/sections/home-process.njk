@@ -1,0 +1,24 @@
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader %}
+    {% set p = home.process %}
+    {{ sectionHeader(p.eyebrow, p.title, p.subtitle) }}
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {% for step in p.steps %}
+      <div class="rounded-3xl border border-brand-blue/10 bg-brand-buttercream p-6 shadow-sm">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-2xl bg-brand-accent flex items-center justify-center text-brand-blue font-bold">
+            {{ loop.index }}
+          </div>
+          <div class="min-w-0">
+            <h3 class="text-lg font-semibold text-brand-blue">{{ step.title }}</h3>
+            <p class="mt-2 text-sm text-brand-blue/80 leading-relaxed">{{ step.text }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+

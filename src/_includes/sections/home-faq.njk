@@ -1,0 +1,17 @@
+<section class="section-padding bg-white" id="faq">
+  <div class="container-custom">
+    {% from "macros/ui.njk" import sectionHeader %}
+    {{ sectionHeader('', home.faq.title, '') }}
+    <div class="w-full flex flex-col gap-4">
+      {% for item in home.faq.items %}
+      <details class="group bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200" {% if loop.first %}open{% endif %}>
+        <summary class="flex justify-between items-center cursor-pointer font-semibold text-brand-blue px-6 py-4 list-none focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30 rounded-2xl">
+          <span>{{ item.question }}</span>
+          <svg class="w-5 h-5 flex-shrink-0 ml-2 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </summary>
+        <div class="px-6 pb-4 text-brand-blue/90">{{ item.answer }}</div>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

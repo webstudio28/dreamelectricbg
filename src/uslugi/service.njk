@@ -1,0 +1,65 @@
+---
+layout: base.njk
+pagination:
+  data: services
+  size: 1
+  alias: service
+permalink: "/uslugi/{{ service.slug }}/"
+eleventyComputed:
+  title: "{{ service.title }}"
+  description: "{{ service.shortDescription }}"
+---
+
+<main>
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <a href="{{ '/uslugi/' | url }}" class="text-sm font-semibold text-brand-blue hover:underline">← Всички услуги</a>
+
+      <div class="mt-4 grid gap-8 lg:grid-cols-2 items-start">
+        <div class="order-2 lg:order-1">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-blue leading-tight">{{ service.title }}</h1>
+          <p class="mt-4 text-brand-blue/80 leading-relaxed max-w-2xl">{{ service.shortDescription }}</p>
+
+          {% if service.bullets and service.bullets.length %}
+          <ul class="mt-6 space-y-2 text-brand-blue/90">
+            {% for b in service.bullets %}
+            <li class="flex items-start gap-2">
+              <span class="mt-0.5 text-brand-accent font-bold">✓</span>
+              <span>{{ b }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            {% from "macros/ui.njk" import button %}
+            {{ button('Запитване', '/kontakti/', 'primary') }}
+            {% if site.contact and site.contact.viber %}
+            <a href="viber://chat?number={{ site.contact.viber | replace('+','%2B') }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue/5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30">
+              Viber
+            </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="rounded-3xl overflow-hidden shadow-lg border border-brand-blue/10">
+            <img src="{{ ('/assets/images/' ~ service.image) | url }}" alt="{{ service.title }}" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if service.longDescription %}
+  <section class="section-padding bg-brand-buttercream">
+    <div class="container-custom">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-blue">Описание</h2>
+      <div class="mt-6 rounded-3xl bg-white border border-brand-blue/10 shadow-sm p-6 md:p-8">
+        <p class="text-brand-blue/90 leading-relaxed whitespace-pre-line">{{ service.longDescription }}</p>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+</main>
+

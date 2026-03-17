@@ -1,0 +1,43 @@
+{
+  "brand": {
+    "name": "Фотоволтаични системи",
+    "logo": "logo-light.png",
+    "logoAlt": "Фотоволтаични системи",
+    "language": "bg"
+  },
+  "colors": {
+    "buttercream": "#FDFBF7",
+    "britishBlue": "#1E3A5F",
+    "accent": "#4DE419"
+  },
+  "seo": {
+    "siteUrl": "https://example.com",
+    "defaultTitle": "Фотоволтаични системи Пловдив и региона",
+    "defaultDescription": "Проектиране и монтаж на фотоволтаични системи за дома и бизнеса в Пловдив и региона. Доставка, монтаж и мониторинг на системата.",
+    "ogImage": "/assets/images/og.jpg",
+    "twitterCard": "summary_large_image"
+  },
+  "nav": {
+    "header": [
+      { "label": "Начало", "url": "/" },
+      { "label": "За нас", "url": "/za-nas/" },
+      { "label": "Услуги", "url": "/uslugi/" },
+      { "label": "Проекти", "url": "/proekti/" },
+      { "label": "Контакти", "url": "/kontakti/" },
+      { "label": "Запитване", "url": "/kontakti/", "isCta": true }
+    ],
+    "footer": [
+      { "label": "Общи условия", "url": "#", "modalId": "modal-terms" },
+      { "label": "Поверителност", "url": "#", "modalId": "modal-privacy" },
+      { "label": "Политика за връщане", "url": "#", "modalId": "modal-refund" }
+    ]
+  },
+  "contact": {
+    "phone": "+359 88 000 0000",
+    "email": "office@example.com",
+    "viber": "+359880000000",
+    "workingHours": "Пон–Нед: 09:00–18:00"
+  },
+  "languages": ["bg"],
+  "defaultLanguage": "bg"
+}
