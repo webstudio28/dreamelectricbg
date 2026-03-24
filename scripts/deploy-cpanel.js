@@ -1,7 +1,7 @@
 /**
- * Build for cPanel (no path prefix).
- * Upload the contents of _site/ to your cPanel "britline" folder so that
- * folder is the document root (e.g. subdomain or addon domain pointing to britline).
+ * Build for cPanel (no path prefix — same as CI).
+ * Upload the contents of _site/ to your cPanel "dreamelectricbg" folder so that
+ * folder is the document root (e.g. addon domain dreamelectricbg.com pointing there).
  */
 
 const { execSync } = require("child_process");
