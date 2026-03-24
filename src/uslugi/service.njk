@@ -33,12 +33,7 @@ eleventyComputed:
 
           <div class="mt-8 flex flex-wrap gap-3">
             {% from "macros/ui.njk" import button %}
-            {{ button('Запитване', '/kontakti/', 'primary') }}
-            {% if site.contact and site.contact.viber %}
-            <a href="viber://chat?number={{ site.contact.viber | replace('+','%2B') }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold border-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue/5 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30">
-              Viber
-            </a>
-            {% endif %}
+            {{ button('Обади се за оферта', 'tel:' ~ (site.contact.phone | replace(' ', '')), 'primary') }}
           </div>
         </div>
 
@@ -61,5 +56,7 @@ eleventyComputed:
     </div>
   </section>
   {% endif %}
+
+  {% include "sections/home-footer-cta.njk" %}
 </main>
 

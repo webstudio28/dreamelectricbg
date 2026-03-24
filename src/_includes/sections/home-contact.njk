@@ -27,7 +27,7 @@
           <div class="font-semibold">Viber</div>
         </div>
         {% if site.contact and site.contact.viber %}
-          <a href="viber://chat?number={{ site.contact.viber | replace('+','%2B') }}" class="inline-flex items-center justify-center w-full rounded-2xl bg-brand-accent text-brand-blue font-semibold py-3 px-4 hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30">Пиши във Viber</a>
+          <a href="viber://chat?number={{ site.contact.viber | replace('+','%2B') }}" class="inline-flex items-center justify-center w-full rounded-2xl bg-brand-accent text-brand-blue font-semibold py-3 px-4 hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30">Пиши ни във Viber</a>
         {% else %}
           <div class="text-sm text-brand-blue/70">Добавете Viber номер в `site.config.json`.</div>
         {% endif %}

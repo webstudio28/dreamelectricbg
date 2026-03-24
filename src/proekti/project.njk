@@ -29,7 +29,7 @@ eleventyComputed:
 
           <div class="mt-8 flex flex-wrap gap-3">
             {% from "macros/ui.njk" import button %}
-            {{ button('Запитване', '/kontakti/', 'primary') }}
+            {{ button('Обади се за оферта', 'tel:' ~ (site.contact.phone | replace(' ', '')), 'primary') }}
           </div>
         </div>
 
@@ -67,5 +67,7 @@ eleventyComputed:
     </div>
   </section>
   {% endif %}
+
+  {% include "sections/home-footer-cta.njk" %}
 </main>
 

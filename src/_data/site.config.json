@@ -24,7 +24,7 @@
       { "label": "Услуги", "url": "/uslugi/" },
       { "label": "Проекти", "url": "/proekti/" },
       { "label": "Контакти", "url": "/kontakti/" },
-      { "label": "Запитване", "url": "/kontakti/", "isCta": true }
+      { "label": "Обади се", "url": "/kontakti/", "isCta": true }
     ],
     "footer": [
       { "label": "Общи условия", "url": "#", "modalId": "modal-terms" },
@@ -33,10 +33,9 @@
     ]
   },
   "contact": {
-    "phone": "+359 88 000 0000",
-    "email": "office@example.com",
-    "viber": "+359880000000",
-    "workingHours": "Пон–Нед: 09:00–18:00"
+    "phone": "+359 89 767 8865",
+    "email": "office.dreamelectric@gmail.com",
+    "viber": "+359897678865"
   },
   "languages": ["bg"],
   "defaultLanguage": "bg"
