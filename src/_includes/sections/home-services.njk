@@ -2,28 +2,25 @@
   <div class="container-custom">
     {% from "macros/ui.njk" import sectionHeader %}
     {% set s = home.services %}
-    <div class="flex flex-nowrap items-center justify-between gap-4">
-      <div class="min-w-0 flex-1">
-        {{ sectionHeader(s.eyebrow, s.title, s.subtitle) }}
-      </div>
-      <div class="flex items-center gap-2 shrink-0">
-        {% from "macros/ui.njk" import button %}
-        {{ button('Всички услуги', '/uslugi/', 'secondary') }}
-      </div>
-    </div>
+    {{ sectionHeader(s.eyebrow, s.title, s.subtitle) }}
   </div>
   <div class="w-full min-w-0 drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide">
     <div class="flex gap-8 services-strip-inner">
       {% for item in services %}
-      <a href="{{ ('/uslugi/' ~ item.slug ~ '/') | url }}" class="relative flex flex-col flex-shrink-0 w-64 md:w-72 overflow-hidden service-card group">
+      <div class="relative flex flex-col flex-shrink-0 w-64 md:w-72 overflow-hidden service-card">
         <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy">
-        <h3 class="text-base font-bold text-brand-blue group-hover:underline">{{ item.title }}</h3>
+        <h3 class="text-base font-bold text-brand-blue">{{ item.title }}</h3>
         <p class="text-sm text-brand-blue/80 mb-3 flex-1 line-clamp-2">{{ item.shortDescription }}</p>
         <div class="flex items-center gap-3 flex-wrap">
-          <span class="inline-flex items-center justify-center rounded-xl bg-brand-accent text-brand-blue font-semibold px-3 py-2.5 text-xs hover:opacity-95 transition-opacity w-fit">Виж повече</span>
+          <a href="{{ ('/uslugi/' ~ item.slug ~ '/') | url }}" class="inline-flex items-center justify-center rounded-xl bg-brand-accent text-brand-blue font-semibold px-3 py-2.5 text-xs hover:opacity-95 transition-opacity w-fit">Виж повече</a>
         </div>
-      </a>
+      </div>
       {% endfor %}
+    </div>
+  </div>
+  <div class="container-custom">
+    <div class="flex justify-end pt-6 md:pt-8">
+      <a href="{{ '/uslugi/' | url }}" class="text-sm font-semibold text-brand-blue hover:underline">Всички услуги</a>
     </div>
   </div>
 </section>
