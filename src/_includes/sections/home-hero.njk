@@ -4,9 +4,9 @@
     <div class="absolute inset-0 bg-black/65" aria-hidden="true"></div>
   </div>
   <div class="container-custom relative z-10 section-padding w-full">
-    <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-      <div class="text-left max-w-xl">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">{{ home.hero.headline }}</h1>
+    <div class="flex flex-col items-start w-full">
+      <div class="text-left w-full max-w-2xl lg:max-w-4xl">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4">{{ home.hero.headline }}</h1>
         <p class="text-lg text-white/90 mb-6">{{ home.hero.paragraph }}</p>
 
         {% if home.hero.bullets and home.hero.bullets.length %}
@@ -20,29 +20,13 @@
         </ul>
         {% endif %}
 
-        {% from "macros/ui.njk" import button %}
         <div class="flex flex-wrap items-center gap-3">
-          {{ button(home.hero.ctaPrimary.label, home.hero.ctaPrimary.url, 'primary') }}
-          {{ button(home.hero.ctaSecondary.label, home.hero.ctaSecondary.url, 'secondary') }}
-          {% if site.contact and site.contact.viber %}
-          <a href="viber://chat?number={{ site.contact.viber | replace('+','%2B') }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold border-2 border-white/40 text-white hover:bg-white/10 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50">
-            Viber
+          <a href="{{ home.hero.ctaPrimary.url | url }}" class="inline-flex items-center justify-center rounded-2xl px-10 py-2.5 text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 bg-brand-accent text-brand-blue hover:opacity-95 lg:px-14 lg:py-3 lg:text-base">
+            {{ home.hero.ctaPrimary.label }}
           </a>
-          {% endif %}
-        </div>
-      </div>
-      <div class="w-full max-w-md bg-white/10 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl p-6 md:p-8">
-        <div class="text-white">
-          <div class="text-sm uppercase tracking-wide text-white/80 mb-2">{{ home.hero.badge }}</div>
-          <div class="text-2xl font-bold mb-2">{{ home.hero.sideTitle }}</div>
-          <p class="text-white/90">{{ home.hero.sideText }}</p>
-          {% if site.contact and site.contact.phone %}
-          <div class="mt-6">
-            <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="inline-flex items-center justify-center w-full rounded-2xl bg-brand-accent text-brand-blue font-semibold py-3 px-6 hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50">
-              {{ home.hero.phoneCtaLabel }}: {{ site.contact.phone }}
-            </a>
-          </div>
-          {% endif %}
+          <a href="{{ home.hero.ctaSecondary.url | url }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-2.5 text-sm font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 bg-white text-brand-blue border-2 border-brand-blue/20 hover:border-brand-blue/40 hover:bg-white/95 lg:px-7 lg:py-3 lg:text-base">
+            {{ home.hero.ctaSecondary.label }}
+          </a>
         </div>
       </div>
     </div>
