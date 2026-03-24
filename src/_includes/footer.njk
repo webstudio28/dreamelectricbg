@@ -1,46 +1,47 @@
+{% from "macros/ui.njk" import icon %}
 <footer class="bg-[#0c1222] text-white py-10 md:py-14">
   <div class="container-custom">
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-8">
       <div>
         <a href="{{ '/' | url }}" class="inline-block" aria-label="{{ site.brand.name }} — начало">
-          <img src="{{ '/assets/images/logo-dark.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-9 w-auto opacity-95 hover:opacity-100 transition-opacity">
+          <img src="{{ '/assets/images/logo-dark.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-[4.5rem] w-auto opacity-95 hover:opacity-100 transition-opacity">
         </a>
         {% if site.footer and site.footer.description %}
-        <p class="mt-4 text-sm text-white/60 leading-relaxed max-w-sm">{{ site.footer.description }}</p>
+        <p class="mt-4 text-base text-white/60 leading-relaxed max-w-sm">{{ site.footer.description }}</p>
         {% endif %}
       </div>
 
       <div>
-        <h2 class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Услуги</h2>
-        <ul class="space-y-2.5 text-sm">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-white/45 mb-4">Услуги</h2>
+        <ul class="space-y-2.5 text-sm leading-snug">
           <li>
-            <a href="{{ '/uslugi/' | url }}" class="text-white/80 hover:text-white transition-colors">Всички услуги</a>
+            <a href="{{ '/uslugi/' | url }}" class="text-white/90 hover:text-white transition-colors">Всички услуги</a>
           </li>
           {% for item in services %}
           <li>
-            <a href="{{ ('/uslugi/' ~ item.slug ~ '/') | url }}" class="text-white/80 hover:text-white transition-colors">{{ item.title }}</a>
+            <a href="{{ ('/uslugi/' ~ item.slug ~ '/') | url }}" class="text-white/90 hover:text-white transition-colors">{{ item.title }}</a>
           </li>
           {% endfor %}
         </ul>
       </div>
 
       <div>
-        <h2 class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Проекти</h2>
-        <ul class="space-y-2.5 text-sm">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-white/45 mb-4">Проекти</h2>
+        <ul class="space-y-2.5 text-sm leading-snug">
           <li>
-            <a href="{{ '/proekti/' | url }}" class="text-white/80 hover:text-white transition-colors">Всички проекти</a>
+            <a href="{{ '/proekti/' | url }}" class="text-white/90 hover:text-white transition-colors">Всички проекти</a>
           </li>
           {% for item in projects %}
           <li>
-            <a href="{{ ('/proekti/' ~ item.slug ~ '/') | url }}" class="text-white/80 hover:text-white transition-colors">{{ item.title }}</a>
+            <a href="{{ ('/proekti/' ~ item.slug ~ '/') | url }}" class="text-white/90 hover:text-white transition-colors">{{ item.title }}</a>
           </li>
           {% endfor %}
         </ul>
       </div>
 
       <div>
-        <h2 class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Контакти</h2>
-        <ul class="space-y-3 text-sm text-white/85">
+        <h2 class="text-sm font-semibold uppercase tracking-wider text-white/45 mb-4">Контакти</h2>
+        <ul class="space-y-3 text-base text-white/90">
           {% if site.contact and site.contact.phone %}
           <li>
             <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="hover:text-white transition-colors underline-offset-2 hover:underline">{{ site.contact.phone }}</a>
@@ -54,18 +55,16 @@
           {% if site.contact and site.contact.viber %}
           <li>
             <a href="viber://chat?number={{ site.contact.viber | replace('+','%2B') }}" class="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+              <span class="text-[#7360f2] shrink-0" aria-hidden="true">{{ icon('viber') }}</span>
               <span class="font-medium">Viber</span>
             </a>
           </li>
           {% endif %}
-          <li class="pt-1">
-            <a href="{{ '/kontakti/' | url }}" class="text-brand-accent font-semibold hover:underline underline-offset-2">Страница контакти</a>
-          </li>
         </ul>
       </div>
     </div>
 
-    <p class="mt-12 pt-8 border-t border-white/10 text-white/45 text-xs">&copy; {{ site.currentYear }} {{ site.brand.name }}</p>
+    <p class="mt-12 pt-8 border-t border-white/10 text-white/45 text-sm">&copy; {{ site.currentYear }} {{ site.brand.name }}</p>
   </div>
 </footer>
 
