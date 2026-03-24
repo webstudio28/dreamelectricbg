@@ -1,40 +1,73 @@
-<footer class="bg-[#0c1222] text-white py-8 md:py-10">
+<footer class="bg-[#0c1222] text-white py-10 md:py-14">
   <div class="container-custom">
-    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-      <a href="{{ '/' | url }}" class="inline-block" aria-label="{{ site.brand.name }} home">
-        <img src="{{ '/assets/images/logo-dark.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-8 w-auto opacity-95 hover:opacity-100 transition-opacity">
-      </a>
-      <nav class="flex flex-wrap gap-x-5 gap-y-1 text-sm text-white/70 hover:text-white" aria-label="Legal">
-        {% for item in site.nav.footer %}
-          {% if item.modalId %}
-          <button type="button" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded" data-modal-open="{{ item.modalId }}">{{ item.label }}</button>
-          {% else %}
-          <a href="{{ item.url | url }}">{{ item.label }}</a>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-8">
+      <div>
+        <a href="{{ '/' | url }}" class="inline-block" aria-label="{{ site.brand.name }} — начало">
+          <img src="{{ '/assets/images/logo-dark.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-9 w-auto opacity-95 hover:opacity-100 transition-opacity">
+        </a>
+        {% if site.footer and site.footer.description %}
+        <p class="mt-4 text-sm text-white/60 leading-relaxed max-w-sm">{{ site.footer.description }}</p>
+        {% endif %}
+      </div>
+
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Услуги</h2>
+        <ul class="space-y-2.5 text-sm">
+          <li>
+            <a href="{{ '/uslugi/' | url }}" class="text-white/80 hover:text-white transition-colors">Всички услуги</a>
+          </li>
+          {% for item in services %}
+          <li>
+            <a href="{{ ('/uslugi/' ~ item.slug ~ '/') | url }}" class="text-white/80 hover:text-white transition-colors">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Проекти</h2>
+        <ul class="space-y-2.5 text-sm">
+          <li>
+            <a href="{{ '/proekti/' | url }}" class="text-white/80 hover:text-white transition-colors">Всички проекти</a>
+          </li>
+          {% for item in projects %}
+          <li>
+            <a href="{{ ('/proekti/' ~ item.slug ~ '/') | url }}" class="text-white/80 hover:text-white transition-colors">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">Контакти</h2>
+        <ul class="space-y-3 text-sm text-white/85">
+          {% if site.contact and site.contact.phone %}
+          <li>
+            <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="hover:text-white transition-colors underline-offset-2 hover:underline">{{ site.contact.phone }}</a>
+          </li>
           {% endif %}
-        {% endfor %}
-      </nav>
+          {% if site.contact and site.contact.email %}
+          <li>
+            <a href="mailto:{{ site.contact.email }}" class="hover:text-white transition-colors break-all underline-offset-2 hover:underline">{{ site.contact.email }}</a>
+          </li>
+          {% endif %}
+          {% if site.contact and site.contact.viber %}
+          <li>
+            <a href="viber://chat?number={{ site.contact.viber | replace('+','%2B') }}" class="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+              <span class="font-medium">Viber</span>
+            </a>
+          </li>
+          {% endif %}
+          <li class="pt-1">
+            <a href="{{ '/kontakti/' | url }}" class="text-brand-accent font-semibold hover:underline underline-offset-2">Страница контакти</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    <p class="mt-5 text-white/50 text-xs">&copy; {{ site.currentYear }} {{ site.brand.name }}</p>
+
+    <p class="mt-12 pt-8 border-t border-white/10 text-white/45 text-xs">&copy; {{ site.currentYear }} {{ site.brand.name }}</p>
   </div>
 </footer>
-
-{# Policy modals — dummy text from home.policies #}
-{% for key, policy in home.policies %}
-<div id="modal-{{ key }}" class="fixed inset-0 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" aria-modal="true" aria-labelledby="modal-{{ key }}-title" role="dialog" hidden>
-  <div class="absolute inset-0 bg-black/50" data-modal-close aria-label="Close"></div>
-  <div class="relative bg-white rounded-3xl shadow-xl max-w-lg w-full max-h-[90vh] overflow-hidden flex flex-col text-brand-blue">
-    <div class="flex items-center justify-between p-6 border-b border-gray-200">
-      <h2 id="modal-{{ key }}-title" class="text-xl font-bold">{{ policy.title }}</h2>
-      <button type="button" class="p-2 rounded-full text-gray-500 hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50" data-modal-close aria-label="Close modal">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <div class="p-6 overflow-y-auto flex-1 prose prose-sm max-w-none">
-      <p>{{ policy.body }}</p>
-    </div>
-  </div>
-</div>
-{% endfor %}
 
 <script src="{{ '/assets/js/modal.js' | url }}" defer></script>
 <script src="{{ '/assets/js/popular-transfers-strip.js' | url }}" defer></script>
