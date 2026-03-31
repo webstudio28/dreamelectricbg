@@ -21,9 +21,7 @@ description: Примерни изпълнени проекти — фотово
             <h2 class="text-lg font-semibold text-brand-blue group-hover:underline">{{ p.title }}</h2>
             <p class="mt-2 text-sm text-brand-blue/80 leading-relaxed line-clamp-2">{{ p.shortDescription }}</p>
             <div class="mt-4 flex flex-wrap gap-2 text-xs text-brand-blue/80">
-              {% if p.location %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-white/70">{{ p.location }}</span>{% endif %}
               {% if p.capacityKwp %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-white/70">{{ p.capacityKwp }} kWp</span>{% endif %}
-              {% if p.year %}<span class="rounded-full border border-brand-blue/15 px-3 py-1 bg-white/70">{{ p.year }}</span>{% endif %}
             </div>
             <div class="mt-5 inline-flex items-center justify-center rounded-2xl bg-brand-accent text-brand-blue font-semibold px-4 py-2 text-sm hover:opacity-95">
               Виж проекта
