@@ -57,6 +57,20 @@ eleventyComputed:
   </section>
   {% endif %}
 
+  {% if service.additionalImages and service.additionalImages.length %}
+  <section class="pb-12 md:pb-16 bg-brand-buttercream">
+    <div class="container-custom">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {% for img in service.additionalImages %}
+        <div class="max-w-md rounded-2xl overflow-hidden border border-brand-blue/10 shadow-sm">
+          <img src="{{ ('/assets/images/' ~ img) | url }}" alt="{{ service.title }} - допълнителна снимка {{ loop.index }}" class="w-full h-auto object-cover">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
   {% include "sections/home-footer-cta.njk" %}
 </main>
 
