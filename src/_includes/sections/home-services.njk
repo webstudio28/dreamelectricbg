@@ -1,20 +1,25 @@
+{% from "macros/ui.njk" import sectionHeader, homeServiceCard %}
 <section class="section-padding bg-brand-buttercream overflow-x-hidden max-w-full">
   <div class="container-custom">
-    {% from "macros/ui.njk" import sectionHeader %}
     {% set s = home.services %}
     {{ sectionHeader(s.eyebrow, s.title, s.subtitle) }}
   </div>
-  <div class="w-full min-w-0 drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide">
+  <div class="w-full min-w-0 drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide lg:hidden">
     <div class="flex gap-8 services-strip-inner">
       {% for item in services %}
-      <div class="relative flex flex-col flex-shrink-0 w-64 md:w-72 overflow-hidden service-card">
-        <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy">
-        <h3 class="text-base font-bold text-brand-blue">{{ item.title }}</h3>
-        <p class="text-sm text-brand-blue/80 mb-3 flex-1 line-clamp-2">{{ item.shortDescription }}</p>
-        <div class="flex items-center gap-3 flex-wrap">
-          <a href="{{ ('/uslugi/' ~ item.slug ~ '/') | url }}" class="inline-flex items-center justify-center rounded-xl bg-brand-accent text-brand-blue font-semibold px-3 py-2.5 text-xs hover:opacity-95 transition-opacity w-fit">Виж повече</a>
-        </div>
-      </div>
+      {{ homeServiceCard(item, 'flex-shrink-0 w-64 md:w-72') }}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="hidden lg:block container-custom">
+    <div class="grid grid-cols-4 gap-8">
+      {% for item in services %}
+      {% set gridCls = 'min-w-0' %}
+      {% if loop.index == 5 %}{% set gridCls = 'min-w-0 lg:col-start-2' %}
+      {% elif loop.index == 6 %}{% set gridCls = 'min-w-0 lg:col-start-3' %}
+      {% elif loop.index == 7 %}{% set gridCls = 'min-w-0 lg:col-start-4' %}
+      {% endif %}
+      {{ homeServiceCard(item, gridCls) }}
       {% endfor %}
     </div>
   </div>

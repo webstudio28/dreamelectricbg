@@ -7,6 +7,18 @@
 </div>
 {% endmacro %}
 
+{# Home services teaser (horizontal strip + desktop grid) #}
+{% macro homeServiceCard(item, extraClass) %}
+<div class="relative flex flex-col overflow-hidden service-card {{ extraClass }}">
+  <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy">
+  <h3 class="text-base font-bold text-brand-blue">{{ item.title }}</h3>
+  <p class="text-sm text-brand-blue/80 mb-3 flex-1 line-clamp-2">{{ item.shortDescription }}</p>
+  <div class="flex items-center gap-3 flex-wrap">
+    <a href="{{ ('/uslugi/' ~ item.slug ~ '/') | url }}" class="inline-flex items-center justify-center rounded-xl bg-brand-accent text-brand-blue font-semibold px-3 py-2.5 text-xs hover:opacity-95 transition-opacity w-fit">Виж повече</a>
+  </div>
+</div>
+{% endmacro %}
+
 {# Icons by name (inline SVG) #}
 {% macro icon(name) %}
   {% if name == 'whatsapp' %}
