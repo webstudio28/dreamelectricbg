@@ -1,18 +1,48 @@
 <header class="border-b border-brand-blue/10 bg-white/95 sticky top-0 z-40">
   <div class="container-custom flex items-center justify-between py-2 md:py-2">
-    <a href="{{ '/' | url }}" class="flex items-center gap-2" aria-label="{{ site.brand.name }} home">
+    <a href="{{ '/' | url }}" class="flex items-center gap-2 shrink-0" aria-label="{{ site.brand.name }} home">
       {% if site.brand.logo %}
       <img src="{{ '/assets/images/logo-light.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-[5.2rem] md:h-[5.85rem] w-auto">
       {% else %}
       <span class="font-semibold text-lg text-brand-blue">{{ site.brand.name }}</span>
       {% endif %}
     </a>
-    <nav class="hidden lg:flex items-center gap-6" aria-label="Main">
+    <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main">
       {% for item in site.nav.header %}
         {% if item.isCta %}
-          <a href="{{ item.url | url }}" class="px-4 py-2 rounded-2xl bg-brand-accent text-brand-blue font-semibold hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50">{{ item.label }}</a>
+          <a href="{{ item.url | url }}" class="ml-2 px-4 py-2 rounded-2xl bg-brand-accent text-brand-blue font-semibold hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 whitespace-nowrap">{{ item.label }}</a>
+        {% elif item.children and item.children.length %}
+          <div class="relative group/pnav focus-within:z-50">
+            <a href="{{ item.url | url }}" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-brand-blue font-semibold hover:bg-brand-blue/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 whitespace-nowrap">
+              {{ item.label }}
+              <svg class="w-4 h-4 opacity-60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="pointer-events-none invisible opacity-0 transition-opacity duration-150 group-hover/pnav:pointer-events-auto group-hover/pnav:visible group-hover/pnav:opacity-100 group-focus-within/pnav:pointer-events-auto group-focus-within/pnav:visible group-focus-within/pnav:opacity-100 absolute left-0 top-full pt-2 z-50 min-w-[max(100%,12rem)]">
+              <ul class="min-w-[240px] max-h-[min(70vh,28rem)] overflow-y-auto rounded-2xl border border-brand-blue/10 bg-white py-2 shadow-xl" role="list">
+                {% for child in item.children %}
+                <li class="relative group/pcat">
+                  <a href="{{ child.url | url }}" class="flex items-center justify-between gap-3 px-4 py-2.5 text-sm text-brand-blue hover:bg-brand-buttercream {% if child.children and child.children.length %}pr-10{% endif %}">
+                    <span class="leading-snug">{{ child.label }}</span>
+                    {% if child.children and child.children.length %}
+                    <span class="absolute right-3 top-1/2 -translate-y-1/2 text-brand-blue/35 text-lg leading-none" aria-hidden="true">›</span>
+                    {% endif %}
+                  </a>
+                  {% if child.children and child.children.length %}
+                  <ul class="pointer-events-none invisible opacity-0 transition-opacity duration-150 group-hover/pcat:pointer-events-auto group-hover/pcat:visible group-hover/pcat:opacity-100 group-focus-within/pcat:pointer-events-auto group-focus-within/pcat:visible group-focus-within/pcat:opacity-100 absolute left-full top-0 ml-0 min-w-[260px] max-h-[min(70vh,28rem)] overflow-y-auto rounded-2xl border border-brand-blue/10 bg-white py-2 shadow-xl z-50" role="list">
+                    {% for sub in child.children %}
+                    <li>
+                      <a href="{{ sub.url | url }}" class="block px-4 py-2 text-sm text-brand-blue hover:bg-brand-buttercream leading-snug">{{ sub.label }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  {% endif %}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
         {% else %}
-          <a href="{{ item.url | url }}" class="text-brand-blue hover:opacity-80">{{ item.label }}</a>
+          <a href="{{ item.url | url }}" class="px-3 py-2 rounded-xl text-brand-blue font-semibold hover:bg-brand-blue/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 whitespace-nowrap">{{ item.label }}</a>
         {% endif %}
       {% endfor %}
     </nav>
@@ -35,11 +65,126 @@
     <nav class="flex flex-col gap-2 text-brand-blue mt-4" aria-label="Mobile">
       {% for item in site.nav.header %}
         {% if item.isCta %}
-          <a href="{{ item.url | url }}" class="mobile-menu-link rounded-2xl bg-brand-accent text-brand-blue font-semibold px-5 py-4 text-center hover:opacity-95 w-full">{{ item.label }}</a>
+          <a href="{{ item.url | url }}" class="mobile-menu-leaf rounded-2xl bg-brand-accent text-brand-blue font-semibold px-5 py-4 text-center hover:opacity-95 w-full">{{ item.label }}</a>
+        {% elif item.children and item.children.length %}
+          <div class="rounded-2xl border border-brand-blue/20 overflow-hidden bg-white">
+            <button type="button" class="mobile-nav-accordion-toggle w-full flex items-center justify-between gap-3 px-5 py-4 text-left font-semibold text-brand-blue hover:bg-brand-blue/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-blue/30" aria-expanded="false">
+              <span>{{ item.label }}</span>
+              <svg class="mobile-nav-chevron w-5 h-5 shrink-0 text-brand-blue/60 transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="mobile-nav-accordion-panel border-t border-brand-blue/10 bg-brand-buttercream/40">
+              <div class="mobile-nav-accordion-inner">
+              <a href="{{ item.url | url }}" class="mobile-menu-leaf block px-5 py-3 text-sm font-semibold text-brand-blue border-b border-brand-blue/10 hover:bg-white/70">Виж всички</a>
+              {% for child in item.children %}
+                {% if child.children and child.children.length %}
+                  <div class="border-b border-brand-blue/10 last:border-b-0">
+                    <button type="button" class="mobile-nav-subtoggle w-full flex items-center justify-between gap-2 px-5 py-3 text-left text-sm font-medium text-brand-blue hover:bg-white/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-blue/20" aria-expanded="false">
+                      <span class="leading-snug">{{ child.label }}</span>
+                      <svg class="mobile-nav-subchevron w-4 h-4 shrink-0 text-brand-blue/50 transition-transform duration-300 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div class="mobile-nav-subpanel bg-white/50">
+                      <div class="mobile-nav-subpanel-inner">
+                      <a href="{{ child.url | url }}" class="mobile-menu-leaf block px-6 py-2 text-xs font-semibold text-brand-blue hover:bg-brand-buttercream/80">Виж всички</a>
+                      {% for sub in child.children %}
+                      <a href="{{ sub.url | url }}" class="mobile-menu-leaf block px-6 py-2.5 text-sm text-brand-blue hover:bg-brand-buttercream border-t border-brand-blue/5">{{ sub.label }}</a>
+                      {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                {% else %}
+                  <a href="{{ child.url | url }}" class="mobile-menu-leaf block px-5 py-3 text-sm font-medium text-brand-blue border-b border-brand-blue/10 last:border-0 hover:bg-white/70">{{ child.label }}</a>
+                {% endif %}
+              {% endfor %}
+              </div>
+            </div>
+          </div>
         {% else %}
-          <a href="{{ item.url | url }}" class="mobile-menu-link rounded-2xl border border-brand-blue/20 px-5 py-4 hover:bg-brand-blue/5 transition-colors">{{ item.label }}</a>
+          <a href="{{ item.url | url }}" class="mobile-menu-leaf rounded-2xl border border-brand-blue/20 px-5 py-4 font-semibold text-brand-blue hover:bg-brand-blue/5 transition-colors">{{ item.label }}</a>
         {% endif %}
       {% endfor %}
     </nav>
   </div>
 </div>
+
+<script>
+(function () {
+  function closeAllMainAccordions(exceptBtn) {
+    document.querySelectorAll('.mobile-nav-accordion-toggle').forEach(function (other) {
+      if (exceptBtn && other === exceptBtn) return;
+      var p = other.nextElementSibling;
+      other.setAttribute('aria-expanded', 'false');
+      if (p && p.classList.contains('mobile-nav-accordion-panel')) {
+        p.classList.remove('is-open');
+        p.querySelectorAll('.mobile-nav-subpanel').forEach(function (sp) {
+          sp.classList.remove('is-open');
+        });
+        p.querySelectorAll('.mobile-nav-subtoggle').forEach(function (subBtn) {
+          subBtn.setAttribute('aria-expanded', 'false');
+          var sch = subBtn.querySelector('.mobile-nav-subchevron');
+          if (sch) sch.classList.remove('rotate-180');
+        });
+      }
+      var och = other.querySelector('.mobile-nav-chevron');
+      if (och) och.classList.remove('rotate-180');
+    });
+  }
+
+  function closeAllSubpanels(exceptBtn) {
+    document.querySelectorAll('.mobile-nav-subtoggle').forEach(function (other) {
+      if (exceptBtn && other === exceptBtn) return;
+      var p = other.nextElementSibling;
+      other.setAttribute('aria-expanded', 'false');
+      if (p && p.classList.contains('mobile-nav-subpanel')) p.classList.remove('is-open');
+      var sch = other.querySelector('.mobile-nav-subchevron');
+      if (sch) sch.classList.remove('rotate-180');
+    });
+  }
+
+  document.querySelectorAll('.mobile-nav-accordion-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = btn.nextElementSibling;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      var ch = btn.querySelector('.mobile-nav-chevron');
+      if (open) {
+        btn.setAttribute('aria-expanded', 'false');
+        if (panel && panel.classList.contains('mobile-nav-accordion-panel')) {
+          panel.classList.remove('is-open');
+          panel.querySelectorAll('.mobile-nav-subpanel').forEach(function (sp) {
+            sp.classList.remove('is-open');
+          });
+          panel.querySelectorAll('.mobile-nav-subtoggle').forEach(function (subBtn) {
+            subBtn.setAttribute('aria-expanded', 'false');
+            var sch = subBtn.querySelector('.mobile-nav-subchevron');
+            if (sch) sch.classList.remove('rotate-180');
+          });
+        }
+        if (ch) ch.classList.remove('rotate-180');
+      } else {
+        closeAllMainAccordions(btn);
+        closeAllSubpanels(null);
+        btn.setAttribute('aria-expanded', 'true');
+        if (panel && panel.classList.contains('mobile-nav-accordion-panel')) panel.classList.add('is-open');
+        if (ch) ch.classList.add('rotate-180');
+      }
+    });
+  });
+
+  document.querySelectorAll('.mobile-nav-subtoggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var panel = btn.nextElementSibling;
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      var ch = btn.querySelector('.mobile-nav-subchevron');
+      if (open) {
+        btn.setAttribute('aria-expanded', 'false');
+        if (panel && panel.classList.contains('mobile-nav-subpanel')) panel.classList.remove('is-open');
+        if (ch) ch.classList.remove('rotate-180');
+      } else {
+        closeAllSubpanels(btn);
+        btn.setAttribute('aria-expanded', 'true');
+        if (panel && panel.classList.contains('mobile-nav-subpanel')) panel.classList.add('is-open');
+        if (ch) ch.classList.add('rotate-180');
+      }
+    });
+  });
+})();
+</script>

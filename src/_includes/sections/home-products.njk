@@ -1,0 +1,53 @@
+{% from "macros/ui.njk" import sectionHeader %}
+<section class="section-padding bg-white overflow-x-hidden max-w-full">
+  <div class="container-custom">
+    {% set p = home.products %}
+    {{ sectionHeader(p.eyebrow, p.title, p.subtitle) }}
+  </div>
+
+  <div class="w-full min-w-0 drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide lg:hidden">
+    <div class="flex gap-8">
+      {% for c in productCategories %}
+      <a href="{{ ('/produkti/' | url) }}#{{ c.slug }}" class="flex-shrink-0 w-64 md:w-72 rounded-3xl overflow-hidden border border-brand-blue/10 bg-brand-buttercream shadow-sm hover:shadow-lg transition">
+        {% if c.image %}
+        <img src="{{ ('/assets/images/' ~ c.image) | url }}" alt="{{ c.title }}" class="w-full aspect-[4/3] object-cover">
+        {% else %}
+        <div class="w-full aspect-[4/3] bg-gradient-to-br from-brand-blue/15 to-brand-accent/15"></div>
+        {% endif %}
+        <div class="p-5">
+          <div class="text-base font-bold text-brand-blue">{{ c.title }}</div>
+          {% if c.description %}<div class="mt-2 text-sm text-brand-blue/80 line-clamp-2">{{ c.description }}</div>{% endif %}
+          <div class="mt-4 inline-flex items-center justify-center rounded-2xl bg-brand-accent text-brand-blue font-semibold px-4 py-2 text-xs hover:opacity-95">
+            Виж продукти
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="hidden lg:block container-custom">
+    <div class="grid grid-cols-5 gap-6">
+      {% for c in productCategories %}
+      <a href="{{ ('/produkti/' | url) }}#{{ c.slug }}" class="rounded-3xl overflow-hidden border border-brand-blue/10 bg-brand-buttercream shadow-sm hover:shadow-lg transition">
+        {% if c.image %}
+        <img src="{{ ('/assets/images/' ~ c.image) | url }}" alt="{{ c.title }}" class="w-full aspect-[4/3] object-cover">
+        {% else %}
+        <div class="w-full aspect-[4/3] bg-gradient-to-br from-brand-blue/15 to-brand-accent/15"></div>
+        {% endif %}
+        <div class="p-5">
+          <div class="text-base font-bold text-brand-blue">{{ c.title }}</div>
+          {% if c.description %}<div class="mt-2 text-sm text-brand-blue/80 line-clamp-2">{{ c.description }}</div>{% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="container-custom">
+    <div class="flex justify-end pt-6 md:pt-8">
+      <a href="{{ '/produkti/' | url }}" class="text-sm font-semibold text-brand-blue hover:underline">Всички продукти</a>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,58 @@
+{
+  "categories": [
+    {
+      "categorySlug": "monofazni-hibridni",
+      "items": [
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun3-6k-3-6kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun5k-5kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun6k-6kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun8k-8kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun10k-10kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun12k-12kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun16k-sg01lp1-eu-16kw/" }
+      ]
+    },
+    {
+      "categorySlug": "trifazni-hibridni",
+      "items": [
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun8k-sg04lp3-eu-8kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun10k-sg01hp3-eu-10kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun12k-sg01hp3-eu-12kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun15k-sg01hp3-eu-15kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun20k-sg05lp3-eu-20kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun25k-sg01hp3-eu-25kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun30k-sg02hp3-eu-30kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun40k-sg01hp3-eu-40kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun50k-sg01hp3-eu-50kw/" },
+        { "url": "https://www.haiksolar.com/product/inverter-deye-sun80k-sg02hp3-eu-80kw/" }
+      ]
+    },
+    {
+      "categorySlug": "trifazni-mrezhovi-invertori",
+      "items": [
+        { "url": "https://www.haiksolar.com/product/huawei-sun2000-100ktl-m2-afcl-100kw/" },
+        { "url": "https://www.haiksolar.com/product/huawei-sun2000-150k-mg0-150kw/" },
+        { "url": "https://www.haiksolar.com/product/huawei-sun2000-215ktl-h0-215kw/" }
+      ]
+    },
+    {
+      "categorySlug": "baterii",
+      "items": [
+        { "url": "https://www.haiksolar.com/product/%d0%b1%d0%b0%d1%82%d0%b5%d1%80%d0%b8%d1%8f-deye-5-12kwh/" },
+        { "url": "https://www.haiksolar.com/product/bos-g-hvb750v-100a-eu/" },
+        { "url": "https://www.haiksolar.com/product/%d0%b1%d0%b0%d1%82%d0%b5%d1%80%d0%b8%d1%8f-deye-lv-rw-f10-2-10-2-kwh/" },
+        { "url": "https://www.haiksolar.com/product/%d0%b1%d0%b0%d1%82%d0%b5%d1%80%d0%b8%d1%8f-deye-lv-rw-f16-16-kwh/" },
+        { "url": "https://www.haiksolar.com/product/deye-hv-battery-cluster-control-box/" },
+        { "url": "https://www.haiksolar.com/product/ge-f60-deye-50kw-60kwh/" }
+      ]
+    },
+    {
+      "categorySlug": "paneli",
+      "items": [
+        { "url": "https://www.haiksolar.com/product/%d1%84%d0%be%d1%82%d0%be%d0%b2%d0%be%d0%bb%d1%82%d0%b0%d0%b8%d1%87%d0%b5%d0%bd-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb-dah-solar-460w-dhn-48z20-dgbw/" },
+        { "url": "https://www.haiksolar.com/product/%d1%84%d0%be%d1%82%d0%be%d0%b2%d0%be%d0%bb%d1%82%d0%b0%d0%b8%d1%87%d0%b5%d0%bd-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb-dah-solar-700w-n-type-double-glass/" },
+        { "url": "https://www.haiksolar.com/product/%d1%84%d0%be%d1%82%d0%be%d0%b2%d0%be%d0%bb%d1%82%d0%b0%d0%b8%d1%87%d0%b5%d0%bd-%d0%bf%d0%b0%d0%bd%d0%b5%d0%bb-dah-solar-580w-n-type-double-glass/" }
+      ]
+    }
+  ]
+}

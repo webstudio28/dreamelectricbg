@@ -101,6 +101,40 @@ body.modal-open {
   .mobile-menu-panel::-webkit-scrollbar {
     display: none;
   }
+
+  /* Mobile nav accordion: one smooth expand/collapse via grid row animation */
+  .mobile-nav-accordion-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mobile-nav-accordion-panel.is-open {
+    grid-template-rows: 1fr;
+  }
+  .mobile-nav-accordion-panel > .mobile-nav-accordion-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .mobile-nav-subpanel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mobile-nav-subpanel.is-open {
+    grid-template-rows: 1fr;
+  }
+  .mobile-nav-subpanel > .mobile-nav-subpanel-inner {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-nav-accordion-panel,
+    .mobile-nav-subpanel {
+      transition-duration: 0.01ms;
+    }
+  }
 }
 
 /* Hide scrollbar on horizontal strips (outside @layer so it wins) */

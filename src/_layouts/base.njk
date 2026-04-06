@@ -46,7 +46,7 @@
       var menu = document.getElementById('mobile-menu');
       var backdrop = document.getElementById('mobile-menu-backdrop');
       var body = document.body;
-      var links = document.querySelectorAll('.mobile-menu-link');
+      var links = document.querySelectorAll('.mobile-menu-link, .mobile-menu-leaf');
       var closeTimer = null;
 
       function openMenu() {
@@ -78,7 +78,27 @@
         });
       }
 
+      function resetMobileNavAccordions() {
+        document.querySelectorAll('.mobile-nav-accordion-panel.is-open').forEach(function (p) {
+          p.classList.remove('is-open');
+        });
+        document.querySelectorAll('.mobile-nav-accordion-toggle').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          var ch = b.querySelector('.mobile-nav-chevron');
+          if (ch) ch.classList.remove('rotate-180');
+        });
+        document.querySelectorAll('.mobile-nav-subpanel.is-open').forEach(function (p) {
+          p.classList.remove('is-open');
+        });
+        document.querySelectorAll('.mobile-nav-subtoggle').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          var ch = b.querySelector('.mobile-nav-subchevron');
+          if (ch) ch.classList.remove('rotate-180');
+        });
+      }
+
       function closeMenu() {
+        resetMobileNavAccordions();
         toggle.classList.remove('active');
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open menu');

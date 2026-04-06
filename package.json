@@ -8,6 +8,7 @@
     "serve": "eleventy --serve",
     "build": "npm run css:build && eleventy",
     "build:cpanel": "node scripts/deploy-cpanel.js",
+    "import:products": "node scripts/import-haiksolar-products.js",
     "css:build": "tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/styles.css --minify",
     "css:watch": "tailwindcss -i ./src/assets/css/tailwind.css -o ./src/assets/css/styles.css --watch",
     "deploy": "echo 'Use GitHub Actions instead'",

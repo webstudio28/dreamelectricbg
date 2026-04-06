@@ -21,8 +21,9 @@
     "header": [
       { "label": "Начало", "url": "/" },
       { "label": "За нас", "url": "/za-nas/" },
-      { "label": "Услуги", "url": "/uslugi/" },
-      { "label": "Проекти", "url": "/proekti/" },
+      { "label": "Услуги", "url": "/uslugi/", "childrenFrom": "services" },
+      { "label": "Продукти", "url": "/produkti/", "childrenFrom": "productCategories" },
+      { "label": "Проекти", "url": "/proekti/", "childrenFrom": "projects" },
       { "label": "Контакти", "url": "/kontakti/" },
       { "label": "Обади се", "url": "/kontakti/", "isCta": true }
     ],

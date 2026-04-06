@@ -1,0 +1,86 @@
+---
+layout: base.njk
+pagination:
+  data: productCategories
+  size: 1
+  alias: category
+permalink: "/produkti/{{ category.slug }}/"
+eleventyComputed:
+  title: "Продукти — {{ category.title }}"
+  description: "{% if category.description %}{{ category.description }}{% else %}Продукти в категория {{ category.title }}.{% endif %}"
+---
+
+<main>
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <a href="{{ ('/produkti/' | url) }}#{{ category.slug }}" class="text-sm font-semibold text-brand-blue hover:underline">← Към всички продукти</a>
+
+      <div class="mt-4 grid gap-8 lg:grid-cols-2 items-start">
+        <div class="order-2 lg:order-1">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-blue leading-tight">{{ category.title }}</h1>
+          {% if category.description %}<p class="mt-4 text-brand-blue/80 leading-relaxed max-w-2xl">{{ category.description }}</p>{% endif %}
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            {% from "macros/ui.njk" import button %}
+            {{ button('Запитване', '/kontakti/', 'primary') }}
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2">
+          {% if category.image %}
+          <div class="rounded-3xl overflow-hidden shadow-lg border border-brand-blue/10">
+            <img src="{{ ('/assets/images/' ~ category.image) | url }}" alt="{{ category.title }}" class="w-full h-full object-cover">
+          </div>
+          {% else %}
+          <div class="rounded-3xl overflow-hidden shadow-lg border border-brand-blue/10 bg-gradient-to-br from-brand-blue/15 to-brand-accent/15 aspect-[4/3]"></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-brand-buttercream">
+    <div class="container-custom">
+      {% set items = productsByCategory[category.slug] | default([]) %}
+
+      {% if items.length == 0 %}
+        <div class="rounded-3xl bg-white border border-brand-blue/10 shadow-sm p-6 md:p-8 text-brand-blue/90">
+          В момента няма налични продукти в тази категория.
+        </div>
+      {% else %}
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {% for p in items %}
+          <a href="{{ ('/produkti/' ~ p.categorySlug ~ '/' ~ p.slug ~ '/') | url }}" class="group rounded-3xl overflow-hidden border border-brand-blue/10 bg-white shadow-sm hover:shadow-lg transition">
+            <div class="p-5">
+              <div class="rounded-2xl overflow-hidden bg-brand-buttercream aspect-square">
+                {% if p.image and p.image.local %}
+                <img src="{{ ('/assets/images/' ~ p.image.local) | url }}" alt="{{ p.image.alt | default(p.name) }}" class="w-full h-full object-cover" loading="lazy">
+                {% else %}
+                <div class="w-full h-full bg-gradient-to-br from-brand-blue/10 to-brand-accent/10"></div>
+                {% endif %}
+              </div>
+
+              <h2 class="mt-4 text-base font-bold text-brand-blue group-hover:underline line-clamp-2">{{ p.name }}</h2>
+              {% if p.overview %}<p class="mt-2 text-sm text-brand-blue/80 leading-relaxed line-clamp-3">{{ p.overview }}</p>{% endif %}
+
+              <div class="mt-4 flex items-center justify-between gap-3">
+                <div class="text-sm font-semibold text-brand-blue">
+                  {% if p.price and p.price.displayEur %}
+                    {{ p.price.displayEur }} € <span class="font-normal text-brand-blue/70">с ДДС</span>
+                  {% else %}
+                    <span class="text-brand-blue/70">Цена по запитване</span>
+                  {% endif %}
+                </div>
+                <div class="inline-flex items-center justify-center rounded-2xl bg-brand-accent text-brand-blue font-semibold px-4 py-2 text-xs hover:opacity-95">
+                  Детайли
+                </div>
+              </div>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</main>
+

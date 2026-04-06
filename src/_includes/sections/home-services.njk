@@ -14,12 +14,7 @@
   <div class="hidden lg:block container-custom">
     <div class="grid grid-cols-4 gap-8">
       {% for item in services %}
-      {% set gridCls = 'min-w-0' %}
-      {% if loop.index == 5 %}{% set gridCls = 'min-w-0 lg:col-start-2' %}
-      {% elif loop.index == 6 %}{% set gridCls = 'min-w-0 lg:col-start-3' %}
-      {% elif loop.index == 7 %}{% set gridCls = 'min-w-0 lg:col-start-4' %}
-      {% endif %}
-      {{ homeServiceCard(item, gridCls) }}
+      {{ homeServiceCard(item, 'min-w-0') }}
       {% endfor %}
     </div>
   </div>

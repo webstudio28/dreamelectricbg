@@ -1,0 +1,118 @@
+---
+layout: base.njk
+pagination:
+  data: products
+  size: 1
+  alias: product
+permalink: "/produkti/{{ product.categorySlug }}/{{ product.slug }}/"
+eleventyComputed:
+  title: "{{ product.name }}"
+  description: "{% if product.overview %}{{ product.overview }}{% else %}Продукт: {{ product.name }}.{% endif %}"
+---
+
+<main>
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <a href="{{ ('/produkti/' | url) }}#{{ product.categorySlug }}" class="text-sm font-semibold text-brand-blue hover:underline">← Към всички продукти</a>
+
+      <div class="mt-4 grid gap-8 lg:grid-cols-2 items-start">
+        <div class="order-2 lg:order-1">
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-blue leading-tight">{{ product.name }}</h1>
+
+          <div class="mt-5 flex flex-wrap items-center gap-3">
+            <div class="inline-flex items-center rounded-2xl border border-brand-blue/10 bg-brand-buttercream px-4 py-3 text-brand-blue">
+              <div class="font-semibold">
+                {% if product.price and product.price.displayEur %}
+                  {{ product.price.displayEur }} € <span class="font-normal text-brand-blue/70">с ДДС</span>
+                {% else %}
+                  <span class="text-brand-blue/70">Цена по запитване</span>
+                {% endif %}
+              </div>
+            </div>
+            {% from "macros/ui.njk" import button %}
+            {{ button('Запитване', '/kontakti/', 'primary') }}
+          </div>
+
+          {% if product.overview %}
+          <p class="mt-6 text-brand-blue/80 leading-relaxed max-w-2xl">{{ product.overview }}</p>
+          {% endif %}
+
+          {% if product.highlights and product.highlights.length %}
+          <ul class="mt-6 space-y-2 text-brand-blue/90">
+            {% for b in product.highlights %}
+            <li class="flex items-start gap-2">
+              <span class="mt-0.5 text-brand-accent font-bold">✓</span>
+              <span>{{ b }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+        </div>
+
+        <div class="order-1 lg:order-2">
+          <div class="rounded-3xl overflow-hidden shadow-lg bg-brand-buttercream">
+            {% if product.image and product.image.local %}
+            <img src="{{ ('/assets/images/' ~ product.image.local) | url }}" alt="{{ product.image.alt | default(product.name) }}" class="w-full h-full object-cover">
+            {% else %}
+            <div class="w-full aspect-square bg-gradient-to-br from-brand-blue/10 to-brand-accent/10"></div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if product.specs and product.specs.length %}
+  <section class="section-padding bg-brand-buttercream">
+    <div class="container-custom">
+      <h2 class="text-2xl md:text-3xl font-bold text-brand-blue">Технически данни</h2>
+      <div class="mt-6 rounded-3xl bg-white border border-brand-blue/10 shadow-sm overflow-hidden">
+        <div class="divide-y divide-brand-blue/10">
+          {% for row in product.specs %}
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-6 p-5">
+            <div class="text-sm font-semibold text-brand-blue">{{ row.label }}</div>
+            <div class="sm:col-span-2 text-sm text-brand-blue/90 leading-relaxed">{{ row.value }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if product.descriptionSections and product.descriptionSections.length %}
+  <section class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="max-w-4xl">
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-blue">Описание</h2>
+        <div class="mt-6 grid gap-4">
+          {% for sec in product.descriptionSections %}
+          <div class="rounded-3xl border border-brand-blue/10 bg-brand-buttercream p-6">
+            {% if sec.title %}<h3 class="text-lg font-semibold text-brand-blue">{{ sec.title }}</h3>{% endif %}
+            {% if sec.paragraphs and sec.paragraphs.length %}
+              {% for p in sec.paragraphs %}
+              <p class="{% if loop.first %}mt-3{% else %}mt-3{% endif %} text-brand-blue/90 leading-relaxed">{{ p }}</p>
+              {% endfor %}
+            {% endif %}
+            {% if sec.bullets and sec.bullets.length %}
+            <ul class="mt-4 space-y-2 text-brand-blue/90">
+              {% for b in sec.bullets %}
+              <li class="flex items-start gap-2">
+                <span class="mt-0.5 text-brand-accent font-bold">✓</span>
+                <span>{{ b }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% include "sections/home-footer-cta.njk" %}
+</main>
+
