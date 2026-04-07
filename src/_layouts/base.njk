@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% else %}Landing{% endif %}</title>
+  {% set pageTitle = (title if title else (site.seo.defaultTitle if site and site.seo else "Landing")) %}
+  {% set fullTitle = pageTitle ~ " | dreamelectric bg" %}
+  <title>{{ fullTitle }}</title>
   <meta name="description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
   <link rel="canonical" href="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ page.url | url }}{% endif %}">
   <meta property="og:url" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ page.url | url }}{% endif %}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% endif %}">
+  <meta property="og:title" content="{{ fullTitle }}">
   <meta property="og:description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
   <meta property="og:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
   <meta name="twitter:card" content="{% if site and site.seo %}{{ site.seo.twitterCard }}{% else %}summary_large_image{% endif %}">
-  <meta name="twitter:title" content="{% if title %}{{ title }}{% elif site and site.seo %}{{ site.seo.defaultTitle }}{% endif %}">
+  <meta name="twitter:title" content="{{ fullTitle }}">
   <meta name="twitter:description" content="{% if description %}{{ description }}{% elif site and site.seo %}{{ site.seo.defaultDescription }}{% endif %}">
   <meta name="twitter:image" content="{% if site and site.seo %}{{ site.seo.siteUrl }}{{ site.seo.ogImage }}{% endif %}">
   <link rel="icon" href="{{ '/favicon.png' | url }}" type="image/png">

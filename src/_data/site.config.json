@@ -1,8 +1,8 @@
 {
   "brand": {
-    "name": "Фотоволтаични системи",
+    "name": "dreamelectric",
     "logo": "logo-light.png",
-    "logoAlt": "Фотоволтаични системи",
+    "logoAlt": "dreamelectric",
     "language": "bg"
   },
   "colors": {
@@ -11,10 +11,10 @@
     "accent": "#4DE419"
   },
   "seo": {
-    "siteUrl": "https://dreamelectricbg.com",
+    "siteUrl": "https://dreamelectric.bg",
     "defaultTitle": "Фотоволтаични системи Пловдив и региона",
     "defaultDescription": "Проектиране и монтаж на фотоволтаични системи за дома и бизнеса в Пловдив и региона. Доставка, монтаж и мониторинг на системата.",
-    "ogImage": "/assets/images/og.jpg",
+    "ogImage": "/assets/images/familna1.png",
     "twitterCard": "summary_large_image"
   },
   "nav": {

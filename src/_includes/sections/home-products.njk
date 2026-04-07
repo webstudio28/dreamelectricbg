@@ -8,9 +8,11 @@
   <div class="w-full min-w-0 drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide lg:hidden">
     <div class="flex gap-8">
       {% for c in productCategories %}
+      {% set categoryItems = productsByCategory[c.slug] | default([]) %}
+      {% set categoryPreview = categoryItems[0] if categoryItems and categoryItems.length else null %}
       <a href="{{ ('/produkti/' | url) }}#{{ c.slug }}" class="flex-shrink-0 w-64 md:w-72 rounded-3xl overflow-hidden border border-brand-blue/10 bg-brand-buttercream shadow-sm hover:shadow-lg transition">
-        {% if c.image %}
-        <img src="{{ ('/assets/images/' ~ c.image) | url }}" alt="{{ c.title }}" class="w-full aspect-[4/3] object-cover">
+        {% if categoryPreview and categoryPreview.image and categoryPreview.image.local %}
+        <img src="{{ ('/assets/images/' ~ categoryPreview.image.local) | url }}" alt="{{ categoryPreview.image.alt | default(c.title) }}" class="w-full aspect-[4/3] object-cover">
         {% else %}
         <div class="w-full aspect-[4/3] bg-gradient-to-br from-brand-blue/15 to-brand-accent/15"></div>
         {% endif %}
@@ -27,11 +29,13 @@
   </div>
 
   <div class="hidden lg:block container-custom">
-    <div class="grid grid-cols-5 gap-6">
+    <div class="grid grid-cols-4 gap-8">
       {% for c in productCategories %}
+      {% set categoryItems = productsByCategory[c.slug] | default([]) %}
+      {% set categoryPreview = categoryItems[0] if categoryItems and categoryItems.length else null %}
       <a href="{{ ('/produkti/' | url) }}#{{ c.slug }}" class="rounded-3xl overflow-hidden border border-brand-blue/10 bg-brand-buttercream shadow-sm hover:shadow-lg transition">
-        {% if c.image %}
-        <img src="{{ ('/assets/images/' ~ c.image) | url }}" alt="{{ c.title }}" class="w-full aspect-[4/3] object-cover">
+        {% if categoryPreview and categoryPreview.image and categoryPreview.image.local %}
+        <img src="{{ ('/assets/images/' ~ categoryPreview.image.local) | url }}" alt="{{ categoryPreview.image.alt | default(c.title) }}" class="w-full aspect-[4/3] object-cover">
         {% else %}
         <div class="w-full aspect-[4/3] bg-gradient-to-br from-brand-blue/15 to-brand-accent/15"></div>
         {% endif %}

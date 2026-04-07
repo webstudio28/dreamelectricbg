@@ -7,15 +7,21 @@
   <div class="w-full min-w-0 drag-scroll overflow-x-auto pb-2 cursor-grab active:cursor-grabbing select-none scrollbar-hide lg:hidden">
     <div class="flex gap-8 services-strip-inner">
       {% for item in services %}
+      {% if not loop.last %}
       {{ homeServiceCard(item, 'flex-shrink-0 w-64 md:w-72') }}
+      {% endif %}
       {% endfor %}
+      {# Temporarily hidden: last service item #}
     </div>
   </div>
   <div class="hidden lg:block container-custom">
     <div class="grid grid-cols-4 gap-8">
       {% for item in services %}
+      {% if not loop.last %}
       {{ homeServiceCard(item, 'min-w-0') }}
+      {% endif %}
       {% endfor %}
+      {# Temporarily hidden: last service item #}
     </div>
   </div>
   <div class="container-custom">
