@@ -60,7 +60,21 @@
       "local": "products/8787-inverter-deye-sun3-6k-3-6kw.webp",
       "alt": "DEYE SUN-5K-SG03LP1-EU – монофазен хибриден инвертор 5kW"
     },
-    "syncedAt": "2026-04-06T22:27:08.505Z"
+    "syncedAt": "2026-04-06T22:27:08.505Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun3-6k-3-6kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2024/08/SUN-3.6-5-6K-SG03LP1-EU.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun3-6k-3-6kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/SUN-3.6-6K-SG03LP1-EU.pdf"
+      }
+    ]
   },
   {
     "id": 8449,
@@ -123,7 +137,21 @@
       "local": "products/8449-inverter-deye-sun5k-5kw.webp",
       "alt": "DEYE SUN-5K-SG03LP1-EU – монофазен хибриден инвертор 5kW"
     },
-    "syncedAt": "2026-04-06T22:27:09.870Z"
+    "syncedAt": "2026-04-06T22:27:09.870Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun5k-5kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2024/08/SUN-3.6-5-6K-SG03LP1-EU.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun5k-5kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/SUN-3.6-6K-SG03LP1-EU-2.pdf"
+      }
+    ]
   },
   {
     "id": 8373,
@@ -186,7 +214,21 @@
       "local": "products/8373-inverter-deye-sun6k-6kw.png",
       "alt": "DEYE SUN-6K-SG05LP1-EU – монофазен хибриден инвертор 6kW"
     },
-    "syncedAt": "2026-04-06T22:27:11.131Z"
+    "syncedAt": "2026-04-06T22:27:11.131Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun6k-6kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/10/datasheet_sun-3.6-8k-sg05lp1.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun6k-6kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/SUN-3.6-6K-SG03LP1-EU-2.pdf"
+      }
+    ]
   },
   {
     "id": 7996,
@@ -249,7 +291,21 @@
       "local": "products/7996-inverter-deye-sun8k-8kw.png",
       "alt": "DEYE SUN-8K-SG05LP1-EU – монофазен хибриден инвертор 8kW"
     },
-    "syncedAt": "2026-04-06T22:27:12.380Z"
+    "syncedAt": "2026-04-06T22:27:12.380Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun8k-8kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/10/datasheet_sun-3.6-8k-sg05lp1.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun8k-8kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/SUN-8K-SG01LP1-EU.pdf"
+      }
+    ]
   },
   {
     "id": 8444,
@@ -312,7 +368,15 @@
       "local": "products/8444-inverter-deye-sun10k-10kw.webp",
       "alt": "SUN-10K-SG02LP1-EU 10kW hybrid 1~"
     },
-    "syncedAt": "2026-04-06T22:27:13.751Z"
+    "syncedAt": "2026-04-06T22:27:13.751Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun10k-10kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2024/08/datasheet_sun-7.6-12k-sg02lp1-eu-am2_240802_en.pdf"
+      }
+    ]
   },
   {
     "id": 8962,
@@ -375,7 +439,15 @@
       "local": "products/8962-inverter-deye-sun12k-12kw.jpg",
       "alt": "DEYE SUN-12K-SG02LP1-EU – монофазен хибриден инвертор 12kW"
     },
-    "syncedAt": "2026-04-06T22:27:15.030Z"
+    "syncedAt": "2026-04-06T22:27:15.030Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun12k-12kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/06/Deye-Hybrid-On-Off-Grid-SG02LP1-12KW-48V-3MPPT-12-P1.pdf"
+      }
+    ]
   },
   {
     "id": 8002,
@@ -438,7 +510,15 @@
       "local": "products/8002-inverter-deye-sun16k-sg01lp1-eu-16kw.jpg",
       "alt": "DEYE SUN-16K-SG01LP1-EU – монофазен хибриден инвертор 16kW"
     },
-    "syncedAt": "2026-04-06T22:27:16.338Z"
+    "syncedAt": "2026-04-06T22:27:16.338Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun16k-sg01lp1-eu-16kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2023/11/monophase-hybrid-inverter-deye-sun-16k-sg01lp1-eu.pdf"
+      }
+    ]
   },
   {
     "id": 8854,
@@ -501,7 +581,21 @@
       "local": "products/8854-inverter-deye-sun8k-sg04lp3-eu-8kw.jpg",
       "alt": "DEYE SUN-8K-SG04LP3-EU – трифазен хибриден инвертор 8kW"
     },
-    "syncedAt": "2026-04-06T22:27:17.569Z"
+    "syncedAt": "2026-04-06T22:27:17.569Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun8k-sg04lp3-eu-8kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2023/11/data-sheets_hybridinvertersun-8-10-12k-2.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за употреба",
+        "file": "docs/products/inverter-deye-sun8k-sg04lp3-eu-8kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/DEYE-User-Manual-5-12kw-SG04LP3-EU.pdf"
+      }
+    ]
   },
   {
     "id": 8839,
@@ -564,7 +658,21 @@
       "local": "products/8839-inverter-deye-sun10k-sg01hp3-eu-10kw.jpg",
       "alt": "DEYE SUN-50K-SG01HP3-EU – трифазен хибриден инвертор 50kW"
     },
-    "syncedAt": "2026-04-06T22:27:18.849Z"
+    "syncedAt": "2026-04-06T22:27:18.849Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun10k-sg01hp3-eu-10kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/data-sheet-three-phase-hybrid-inverter-deye-sun-5-25k-sg01hp3-eu-am2.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за употреба",
+        "file": "docs/products/inverter-deye-sun10k-sg01hp3-eu-10kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/SUN-5-25K-SG01HP3-EU-AM2-1-R.pdf"
+      }
+    ]
   },
   {
     "id": 8960,
@@ -627,7 +735,21 @@
       "local": "products/8960-inverter-deye-sun12k-sg01hp3-eu-12kw.jpg",
       "alt": "DEYE SUN-12K-SG01HP3-EU – трифазен хибриден инвертор 12kW за високоволтови батерии"
     },
-    "syncedAt": "2026-04-06T22:27:20.103Z"
+    "syncedAt": "2026-04-06T22:27:20.103Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun12k-sg01hp3-eu-12kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/data-sheet-three-phase-hybrid-inverter-deye-sun-5-25k-sg01hp3-eu-am2-1.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за употреба",
+        "file": "docs/products/inverter-deye-sun12k-sg01hp3-eu-12kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/SUN-5-25K-SG01HP3-EU-AM2-1-R.pdf"
+      }
+    ]
   },
   {
     "id": 8050,
@@ -690,7 +812,21 @@
       "local": "products/8050-inverter-deye-sun15k-sg01hp3-eu-15kw.jpg",
       "alt": "DEYE SUN-50K-SG01HP3-EU – трифазен хибриден инвертор 50kW"
     },
-    "syncedAt": "2026-04-06T22:27:21.300Z"
+    "syncedAt": "2026-04-06T22:27:21.300Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun15k-sg01hp3-eu-15kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/data-sheet-three-phase-hybrid-inverter-deye-sun-5-25k-sg01hp3-eu-am2.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за употреба",
+        "file": "docs/products/inverter-deye-sun15k-sg01hp3-eu-15kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/SUN-5-25K-SG01HP3-EU-AM2-1-R.pdf"
+      }
+    ]
   },
   {
     "id": 8860,
@@ -753,7 +889,15 @@
       "local": "products/8860-inverter-deye-sun20k-sg05lp3-eu-20kw.jpg",
       "alt": "DEYE SUN-20K-SG05LP3-EU – трифазен хибриден инвертор 20kW"
     },
-    "syncedAt": "2026-04-06T22:27:22.480Z"
+    "syncedAt": "2026-04-06T22:27:22.480Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun20k-sg05lp3-eu-20kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/03/datasheet_sun-14-20k-sg05lp3-eu-sm2_240802_en-1.pdf"
+      }
+    ]
   },
   {
     "id": 8566,
@@ -816,7 +960,21 @@
       "local": "products/8566-inverter-deye-sun25k-sg01hp3-eu-25kw.jpg",
       "alt": "DEYE SUN-50K-SG01HP3-EU – трифазен хибриден инвертор 50kW"
     },
-    "syncedAt": "2026-04-06T22:27:23.761Z"
+    "syncedAt": "2026-04-06T22:27:23.761Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun25k-sg01hp3-eu-25kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/data-sheet-three-phase-hybrid-inverter-deye-sun-5-25k-sg01hp3-eu-am2.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за употреба",
+        "file": "docs/products/inverter-deye-sun25k-sg01hp3-eu-25kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/02/SUN-5-25K-SG01HP3-EU-AM2-1-R.pdf"
+      }
+    ]
   },
   {
     "id": 8006,
@@ -879,7 +1037,21 @@
       "local": "products/8006-inverter-deye-sun30k-sg02hp3-eu-30kw.jpg",
       "alt": "DEYE SUN-50K-SG01HP3-EU – трифазен хибриден инвертор 50kW"
     },
-    "syncedAt": "2026-04-06T22:27:24.934Z"
+    "syncedAt": "2026-04-06T22:27:24.934Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun30k-sg02hp3-eu-30kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2023/11/deye-datasheed-29.9-50kw.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun30k-sg02hp3-eu-30kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/SUN-29.9-50K-SG01HP3-EU.pdf"
+      }
+    ]
   },
   {
     "id": 8009,
@@ -942,7 +1114,21 @@
       "local": "products/8009-inverter-deye-sun40k-sg01hp3-eu-40kw.jpg",
       "alt": "DEYE SUN-50K-SG01HP3-EU – трифазен хибриден инвертор 50kW"
     },
-    "syncedAt": "2026-04-06T22:27:26.169Z"
+    "syncedAt": "2026-04-06T22:27:26.169Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun40k-sg01hp3-eu-40kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2023/11/deye-datasheed-29.9-50kw-1.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun40k-sg01hp3-eu-40kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/SUN-29.9-50K-SG01HP3-EU.pdf"
+      }
+    ]
   },
   {
     "id": 8011,
@@ -1005,7 +1191,21 @@
       "local": "products/8011-inverter-deye-sun50k-sg01hp3-eu-50kw.jpg",
       "alt": "DEYE SUN-50K-SG01HP3-EU – трифазен хибриден инвертор 50kW"
     },
-    "syncedAt": "2026-04-06T22:27:27.384Z"
+    "syncedAt": "2026-04-06T22:27:27.384Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun50k-sg01hp3-eu-50kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2023/11/deye-datasheed-29.9-50kw-1.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun50k-sg01hp3-eu-50kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/SUN-29.9-50K-SG01HP3-EU.pdf"
+      }
+    ]
   },
   {
     "id": 9053,
@@ -1068,7 +1268,21 @@
       "local": "products/9053-inverter-deye-sun80k-sg02hp3-eu-80kw.jpg",
       "alt": "DEYE SUN-80K-SG02HP3-EU – трифазен хибриден инвертор 80kW"
     },
-    "syncedAt": "2026-04-06T22:27:28.636Z"
+    "syncedAt": "2026-04-06T22:27:28.636Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/inverter-deye-sun80k-sg02hp3-eu-80kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/datasheet_sun-60-80k-sg01hp3-eu.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за монтаж",
+        "file": "docs/products/inverter-deye-sun80k-sg02hp3-eu-80kw-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/08/manual-sun-60-80k.pdf"
+      }
+    ]
   },
   {
     "id": 9029,
@@ -1118,7 +1332,15 @@
       "local": "products/9029-huawei-sun2000-100ktl-m2-afcl-100kw.jpg",
       "alt": "Huawei SUN2000-100KTL-M2 &#8211; AFCl -100kW"
     },
-    "syncedAt": "2026-04-06T22:27:29.846Z"
+    "syncedAt": "2026-04-06T22:27:29.846Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/huawei-sun2000-100ktl-m2-afcl-100kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2026/01/sun2000-100ktl-m2-datasheet.pdf"
+      }
+    ]
   },
   {
     "id": 9315,
@@ -1168,7 +1390,15 @@
       "local": "products/9315-huawei-sun2000-150k-mg0-150kw.jpg",
       "alt": "Huawei SUN2000-150K-MG0 – 150kW"
     },
-    "syncedAt": "2026-04-06T22:27:31.153Z"
+    "syncedAt": "2026-04-06T22:27:31.153Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/huawei-sun2000-150k-mg0-150kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2026/01/sun2000-150k-mg0-datasheet.pdf"
+      }
+    ]
   },
   {
     "id": 9318,
@@ -1218,7 +1448,15 @@
       "local": "products/9318-huawei-sun2000-215ktl-h0-215kw.jpg",
       "alt": "Huawei SUN2000-215KTL – H0 -215kW"
     },
-    "syncedAt": "2026-04-06T22:27:32.429Z"
+    "syncedAt": "2026-04-06T22:27:32.429Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/huawei-sun2000-215ktl-h0-215kw-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2026/01/sun2000-215ktl-h0-datasheet-1.pdf"
+      }
+    ]
   },
   {
     "id": 8063,
@@ -1302,7 +1540,15 @@
       "local": "products/8063-deye-5-12kwh.png",
       "alt": "Батерия DEYE SE-G5.1 Pro-B 5.12kWh"
     },
-    "syncedAt": "2026-04-06T22:27:33.687Z"
+    "syncedAt": "2026-04-06T22:27:33.687Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/deye-5-12kwh-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2024/03/Datasheet-A-LV-3U_Battery_SE-G5.1_Pro-V1.4.pdf"
+      }
+    ]
   },
   {
     "id": 8455,
@@ -1385,7 +1631,15 @@
       "local": "products/8455-bos-g-hvb750v-100a-eu.jpg",
       "alt": "BOS-G 5.12kWh високоволтова батерия"
     },
-    "syncedAt": "2026-04-06T22:27:34.913Z"
+    "syncedAt": "2026-04-06T22:27:34.913Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/bos-g-hvb750v-100a-eu-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2024/08/BOS-G-V1.4.pdf"
+      }
+    ]
   },
   {
     "id": 9131,
@@ -1469,7 +1723,21 @@
       "local": "products/9131-deye-lv-rw-f10-2-10-2-kwh.jpg",
       "alt": "Батерия Deye LV RW-F10.2 – 10.2 kWh"
     },
-    "syncedAt": "2026-04-06T22:27:36.159Z"
+    "syncedAt": "2026-04-06T22:27:36.159Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/deye-lv-rw-f10-2-10-2-kwh-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/10/DEYE-RW-F10.2.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за употреба",
+        "file": "docs/products/deye-lv-rw-f10-2-10-2-kwh-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/10/manual-documentation.pdf"
+      }
+    ]
   },
   {
     "id": 9212,
@@ -1553,7 +1821,21 @@
       "local": "products/9212-deye-lv-rw-f16-16-kwh.jpg",
       "alt": "Батерия Deye LV RW-F16 – 16 kWh"
     },
-    "syncedAt": "2026-04-06T22:27:37.391Z"
+    "syncedAt": "2026-04-06T22:27:37.391Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/deye-lv-rw-f16-16-kwh-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/11/20251119093917825.pdf"
+      },
+      {
+        "type": "install",
+        "label": "Ръководство за употреба",
+        "file": "docs/products/deye-lv-rw-f16-16-kwh-install.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2025/10/manual-documentation.pdf"
+      }
+    ]
   },
   {
     "id": 8451,
@@ -1596,7 +1878,15 @@
       "local": "products/8451-deye-hv-battery-cluster-control-box.jpg",
       "alt": "Deye HV Battery cluster control box"
     },
-    "syncedAt": "2026-04-06T22:27:38.605Z"
+    "syncedAt": "2026-04-06T22:27:38.605Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/deye-hv-battery-cluster-control-box-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2024/08/BOS-G-V1.4.pdf"
+      }
+    ]
   },
   {
     "id": 8377,
@@ -1689,7 +1979,15 @@
       "local": "products/8377-ge-f60-deye-50kw-60kwh.png",
       "alt": "Система за съхранение GE-F60 Deye – 60kWh"
     },
-    "syncedAt": "2026-04-06T22:27:39.917Z"
+    "syncedAt": "2026-04-06T22:27:39.917Z",
+    "documents": [
+      {
+        "type": "technical",
+        "label": "Технически характеристики (PDF)",
+        "file": "docs/products/ge-f60-deye-50kw-60kwh-technical.pdf",
+        "sourceUrl": "https://www.haiksolar.com/wp-content/uploads/2024/05/GE-F60-V1.0.pdf"
+      }
+    ]
   },
   {
     "id": 8958,
