@@ -9,6 +9,14 @@ const IMG_DIR = path.join(ROOT, "src", "assets", "images", "products");
 
 const HAIKSOLAR = "https://www.haiksolar.com";
 
+/** Irrevocable Council/ECB rate for Bulgaria: 1 EUR = 1.95583 BGN (euro adoption). */
+const EUR_TO_BGN_OFFICIAL = 1.95583;
+
+function eurToBgnAmount(eur) {
+  if (eur == null || typeof eur !== "number" || Number.isNaN(eur)) return null;
+  return Math.round(eur * EUR_TO_BGN_OFFICIAL * 100) / 100;
+}
+
 function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
@@ -312,6 +320,8 @@ async function main() {
             currency: wc?.prices?.currency_code || "EUR",
             regularEur,
             displayEur: displayEurFinal,
+            regularBgn: eurToBgnAmount(regularEur),
+            displayBgn: eurToBgnAmount(displayEurFinal),
           },
           image: localImage,
           syncedAt: new Date().toISOString(),

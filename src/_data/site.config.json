@@ -38,5 +38,9 @@
     "viber": "+359897678865"
   },
   "languages": ["bg"],
-  "defaultLanguage": "bg"
+  "defaultLanguage": "bg",
+  "pricing": {
+    "eurToBgnOfficialRate": 1.95583,
+    "eurToBgnRateNote": "Фиксиран курс при въвеждане на еврото в България: 1 EUR = 1.95583 BGN (Регламент на Съвета на ЕС / ЕЦБ)."
+  }
 }

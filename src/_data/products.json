@@ -54,7 +54,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 868.68,
-      "displayEur": 870
+      "displayEur": 870,
+      "regularBgn": 1698.99,
+      "displayBgn": 1701.57
     },
     "image": {
       "local": "products/8787-inverter-deye-sun3-6k-3-6kw.webp",
@@ -131,7 +133,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1022.07,
-      "displayEur": 1020
+      "displayEur": 1020,
+      "regularBgn": 1999,
+      "displayBgn": 1994.95
     },
     "image": {
       "local": "products/8449-inverter-deye-sun5k-5kw.webp",
@@ -208,7 +212,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1111.55,
-      "displayEur": 1110
+      "displayEur": 1110,
+      "regularBgn": 2174,
+      "displayBgn": 2170.97
     },
     "image": {
       "local": "products/8373-inverter-deye-sun6k-6kw.png",
@@ -285,7 +291,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1558.93,
-      "displayEur": 1560
+      "displayEur": 1560,
+      "regularBgn": 3049,
+      "displayBgn": 3051.09
     },
     "image": {
       "local": "products/7996-inverter-deye-sun8k-8kw.png",
@@ -362,7 +370,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1766.51,
-      "displayEur": 1765
+      "displayEur": 1765,
+      "regularBgn": 3454.99,
+      "displayBgn": 3452.04
     },
     "image": {
       "local": "products/8444-inverter-deye-sun10k-10kw.webp",
@@ -433,7 +443,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 2075.33,
-      "displayEur": 2075
+      "displayEur": 2075,
+      "regularBgn": 4058.99,
+      "displayBgn": 4058.35
     },
     "image": {
       "local": "products/8962-inverter-deye-sun12k-12kw.jpg",
@@ -504,7 +516,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 2525.27,
-      "displayEur": 2525
+      "displayEur": 2525,
+      "regularBgn": 4939,
+      "displayBgn": 4938.47
     },
     "image": {
       "local": "products/8002-inverter-deye-sun16k-sg01lp1-eu-16kw.jpg",
@@ -575,7 +589,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1967.96,
-      "displayEur": 1970
+      "displayEur": 1970,
+      "regularBgn": 3849,
+      "displayBgn": 3852.99
     },
     "image": {
       "local": "products/8854-inverter-deye-sun8k-sg04lp3-eu-8kw.jpg",
@@ -652,7 +668,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1602.9,
-      "displayEur": 1605
+      "displayEur": 1605,
+      "regularBgn": 3135,
+      "displayBgn": 3139.11
     },
     "image": {
       "local": "products/8839-inverter-deye-sun10k-sg01hp3-eu-10kw.jpg",
@@ -729,7 +747,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1599.83,
-      "displayEur": 1600
+      "displayEur": 1600,
+      "regularBgn": 3129,
+      "displayBgn": 3129.33
     },
     "image": {
       "local": "products/8960-inverter-deye-sun12k-sg01hp3-eu-12kw.jpg",
@@ -806,7 +826,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1733.79,
-      "displayEur": 1735
+      "displayEur": 1735,
+      "regularBgn": 3391,
+      "displayBgn": 3393.37
     },
     "image": {
       "local": "products/8050-inverter-deye-sun15k-sg01hp3-eu-15kw.jpg",
@@ -883,7 +905,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 2883.17,
-      "displayEur": 2885
+      "displayEur": 2885,
+      "regularBgn": 5638.99,
+      "displayBgn": 5642.57
     },
     "image": {
       "local": "products/8860-inverter-deye-sun20k-sg05lp3-eu-20kw.jpg",
@@ -954,7 +978,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 2328.93,
-      "displayEur": 2330
+      "displayEur": 2330,
+      "regularBgn": 4554.99,
+      "displayBgn": 4557.08
     },
     "image": {
       "local": "products/8566-inverter-deye-sun25k-sg01hp3-eu-25kw.jpg",
@@ -1031,7 +1057,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 3680.79,
-      "displayEur": 3680
+      "displayEur": 3680,
+      "regularBgn": 7199,
+      "displayBgn": 7197.45
     },
     "image": {
       "local": "products/8006-inverter-deye-sun30k-sg02hp3-eu-30kw.jpg",
@@ -1108,7 +1136,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 4959.02,
-      "displayEur": 4960
+      "displayEur": 4960,
+      "regularBgn": 9699,
+      "displayBgn": 9700.92
     },
     "image": {
       "local": "products/8009-inverter-deye-sun40k-sg01hp3-eu-40kw.jpg",
@@ -1185,7 +1215,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 5240.23,
-      "displayEur": 5240
+      "displayEur": 5240,
+      "regularBgn": 10249,
+      "displayBgn": 10248.55
     },
     "image": {
       "local": "products/8011-inverter-deye-sun50k-sg01hp3-eu-50kw.jpg",
@@ -1262,7 +1294,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 7157.06,
-      "displayEur": 7155
+      "displayEur": 7155,
+      "regularBgn": 13997.99,
+      "displayBgn": 13993.96
     },
     "image": {
       "local": "products/9053-inverter-deye-sun80k-sg02hp3-eu-80kw.jpg",
@@ -1326,7 +1360,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 4530,
-      "displayEur": 4530
+      "displayEur": 4530,
+      "regularBgn": 8859.91,
+      "displayBgn": 8859.91
     },
     "image": {
       "local": "products/9029-huawei-sun2000-100ktl-m2-afcl-100kw.jpg",
@@ -1384,7 +1420,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": null,
-      "displayEur": null
+      "displayEur": null,
+      "regularBgn": null,
+      "displayBgn": null
     },
     "image": {
       "local": "products/9315-huawei-sun2000-150k-mg0-150kw.jpg",
@@ -1442,7 +1480,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": null,
-      "displayEur": null
+      "displayEur": null,
+      "regularBgn": null,
+      "displayBgn": null
     },
     "image": {
       "local": "products/9318-huawei-sun2000-215ktl-h0-215kw.jpg",
@@ -1534,7 +1574,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 981.68,
-      "displayEur": 980
+      "displayEur": 980,
+      "regularBgn": 1920,
+      "displayBgn": 1916.71
     },
     "image": {
       "local": "products/8063-deye-5-12kwh.png",
@@ -1625,7 +1667,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 958.67,
-      "displayEur": 960
+      "displayEur": 960,
+      "regularBgn": 1875,
+      "displayBgn": 1877.6
     },
     "image": {
       "local": "products/8455-bos-g-hvb750v-100a-eu.jpg",
@@ -1717,7 +1761,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 1942.4,
-      "displayEur": 1940
+      "displayEur": 1940,
+      "regularBgn": 3799,
+      "displayBgn": 3794.31
     },
     "image": {
       "local": "products/9131-deye-lv-rw-f10-2-10-2-kwh.jpg",
@@ -1815,7 +1861,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 2248.15,
-      "displayEur": 2250
+      "displayEur": 2250,
+      "regularBgn": 4397,
+      "displayBgn": 4400.62
     },
     "image": {
       "local": "products/9212-deye-lv-rw-f16-16-kwh.jpg",
@@ -1872,7 +1920,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 836.98,
-      "displayEur": 835
+      "displayEur": 835,
+      "regularBgn": 1636.99,
+      "displayBgn": 1633.12
     },
     "image": {
       "local": "products/8451-deye-hv-battery-cluster-control-box.jpg",
@@ -1973,7 +2023,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": 18355.38,
-      "displayEur": 18355
+      "displayEur": 18355,
+      "regularBgn": 35900,
+      "displayBgn": 35899.26
     },
     "image": {
       "local": "products/8377-ge-f60-deye-50kw-60kwh.png",
@@ -2048,7 +2100,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": null,
-      "displayEur": null
+      "displayEur": null,
+      "regularBgn": null,
+      "displayBgn": null
     },
     "image": {
       "local": "products/8958-dah-solar-460w-dhn-48z20-dgbw.png",
@@ -2115,7 +2169,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": null,
-      "displayEur": null
+      "displayEur": null,
+      "regularBgn": null,
+      "displayBgn": null
     },
     "image": {
       "local": "products/8582-dah-solar-700w-n-type-double-glass.jpg",
@@ -2182,7 +2238,9 @@
     "price": {
       "currency": "EUR",
       "regularEur": null,
-      "displayEur": null
+      "displayEur": null,
+      "regularBgn": null,
+      "displayBgn": null
     },
     "image": {
       "local": "products/8580-dah-solar-580w-n-type-double-glass.png",

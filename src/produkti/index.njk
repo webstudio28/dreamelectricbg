@@ -66,7 +66,7 @@ description: Инвертори, батерии и панели — подбра
             <div class="mt-4 flex items-center justify-between gap-2">
               <span class="text-xs font-semibold text-brand-blue">
                 {% if p.price and p.price.displayEur %}
-                  {{ p.price.displayEur }} € <span class="font-normal text-brand-blue/70">с ДДС</span>
+                  {{ p.price.displayEur }} €{% if p.price.displayBgn %} · {{ p.price.displayBgn }} лв{% endif %} <span class="font-normal text-brand-blue/70">с ДДС</span>
                 {% else %}
                   <span class="text-brand-blue/70">Цена по запитване</span>
                 {% endif %}

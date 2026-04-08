@@ -23,7 +23,7 @@ eleventyComputed:
             <div class="inline-flex items-center rounded-2xl border border-brand-blue/10 bg-brand-buttercream px-4 py-3 text-brand-blue">
               <div class="font-semibold">
                 {% if product.price and product.price.displayEur %}
-                  {{ product.price.displayEur }} € <span class="font-normal text-brand-blue/70">с ДДС</span>
+                  {{ product.price.displayEur }} €{% if product.price.displayBgn %} · {{ product.price.displayBgn }} лв{% endif %} <span class="font-normal text-brand-blue/70">с ДДС</span>
                 {% else %}
                   <span class="text-brand-blue/70">Цена по запитване</span>
                 {% endif %}
