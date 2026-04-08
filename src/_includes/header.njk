@@ -10,7 +10,7 @@
     <nav class="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main">
       {% for item in site.nav.header %}
         {% if item.isCta %}
-          <a href="{{ item.url | url }}" class="ml-2 px-4 py-2 rounded-2xl bg-brand-accent text-brand-blue font-semibold hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 whitespace-nowrap">{{ item.label }}</a>
+          <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="ml-2 px-4 py-2 rounded-2xl bg-brand-accent text-brand-blue font-semibold hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/50 whitespace-nowrap">{{ item.label }}</a>
         {% elif item.children and item.children.length %}
           <div class="relative group/pnav focus-within:z-50">
             <a href="{{ item.url | url }}" class="inline-flex items-center gap-1 px-3 py-2 rounded-xl text-brand-blue font-semibold hover:bg-brand-blue/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40 whitespace-nowrap">
@@ -65,7 +65,7 @@
     <nav class="flex flex-col gap-2 text-brand-blue mt-4" aria-label="Mobile">
       {% for item in site.nav.header %}
         {% if item.isCta %}
-          <a href="{{ item.url | url }}" class="mobile-menu-leaf rounded-2xl bg-brand-accent text-brand-blue font-semibold px-5 py-4 text-center hover:opacity-95 w-full">{{ item.label }}</a>
+          <a href="tel:{{ site.contact.phone | replace(' ', '') }}" class="mobile-menu-leaf rounded-2xl bg-brand-accent text-brand-blue font-semibold px-5 py-4 text-center hover:opacity-95 w-full">{{ item.label }}</a>
         {% elif item.children and item.children.length %}
           <div class="rounded-2xl border border-brand-blue/20 overflow-hidden bg-white">
             <button type="button" class="mobile-nav-accordion-toggle w-full flex items-center justify-between gap-3 px-5 py-4 text-left font-semibold text-brand-blue hover:bg-brand-blue/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-blue/30" aria-expanded="false">
