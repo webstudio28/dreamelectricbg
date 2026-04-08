@@ -52,6 +52,12 @@
   }
 
   function openModal(id) {
+    // Ensure only one modal is open at a time.
+    var currentlyOpen = document.querySelector("[aria-modal=true]:not([hidden])");
+    if (currentlyOpen && currentlyOpen.id && currentlyOpen.id !== id) {
+      closeModal(currentlyOpen.id);
+    }
+
     var el = document.getElementById(id);
     if (!el) return;
     el.removeAttribute("hidden");

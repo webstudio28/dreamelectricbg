@@ -3,6 +3,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   // Favicon: src/favicon.png → output root (Eleventy paths are relative to project root)
   eleventyConfig.addPassthroughCopy({ "src/favicon.png": "favicon.png" });
+  // Google Search Console HTML verification — outside src/ so Eleventy does not template it as .html
+  eleventyConfig.addPassthroughCopy({
+    "./google043405ace894fdce.html": "google043405ace894fdce.html",
+  });
 
   // For sitemap lastmod
   eleventyConfig.addGlobalData("buildDate", () => new Date().toISOString().slice(0, 10));

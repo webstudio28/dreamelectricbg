@@ -9,6 +9,40 @@
     "shortDescription": "Проект за фамилна къща за собствени нужди в Пловдивска област с мощност 10 kWp, изпълнен в рамките на около 1 месец.",
     "longDescription": "Този проект е реализиран за фамилна къща в Пловдивска област с основна цел надеждно покриване на собственото потребление и по-добра предвидимост на месечните разходи за електроенергия.\n\nСистемата е с инсталирана мощност 10 kWp и е планирана така, че да отговаря на реалните нужди на домакинството, без излишно оразмеряване. Изпълнението премина през всички ключови етапи - оглед на място, техническо планиране, монтаж и пускане в експлоатация.\n\nЦялата изработка беше завършена в рамките на около 1 месец, като фокусът беше върху чисто изпълнение, правилна настройка и стабилна работа в ежедневна експлоатация.",
     "images": ["project1_1.jpg", "project1_2.jpg", "project1_3.jpg", "project1_4.jpg"]
+  },
+  {
+    "slug": "nazemna-konstrukciq-corab-8kw",
+    "title": "Наземна конструкция corab system 8кw",
+    "shortDescription": "Наземна конструкция corab system 8кw",
+    "images": [
+      "projects/2-nazemna-konstrukciq/1Hc65dffce7f024d1a81879a41adda7b69q.jpg",
+      "projects/2-nazemna-konstrukciq/2Residential-Solar-Panel-img-2.jpg",
+      "projects/2-nazemna-konstrukciq/31000021450.jpg",
+      "projects/2-nazemna-konstrukciq/4Система-Corab-2-600x667.jpg",
+      "projects/2-nazemna-konstrukciq/5Система-Corab-3-600x667.jpg",
+      "projects/2-nazemna-konstrukciq/6Система-Corab-7-600x667.jpg",
+      "projects/2-nazemna-konstrukciq/71000021440.jpg",
+      "projects/2-nazemna-konstrukciq/81000021438 (1).jpg"
+    ]
+  },
+  {
+    "slug": "sistema-10kw",
+    "title": "10kw система",
+    "shortDescription": "10kw система",
+    "images": [
+      "projects/3-10kw/1000021254 - Copy.jpg",
+      "projects/3-10kw/277799717_406377317985089_8707610292908255104_n.jpg",
+      "projects/3-10kw/Screenshot_20260323_011848_Gallery.jpg"
+    ]
+  },
+  {
+    "slug": "sistema-13kw-stenen-montazh",
+    "title": "13kw система стенен монтаж на панелите",
+    "shortDescription": "13kw система стенен монтаж на панелите",
+    "images": [
+      "projects/4-13kw/1000021443.jpg",
+      "projects/4-13kw/FB_IMG_1720532876213.jpg",
+      "projects/4-13kw/Screenshot_20260323_011855_Gallery.jpg"
+    ]
   }
 ]
-
