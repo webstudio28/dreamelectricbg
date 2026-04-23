@@ -2,7 +2,7 @@
   <div class="container-custom flex items-center justify-between py-2 md:py-2">
     <a href="{{ '/' | url }}" class="flex items-center gap-2 shrink-0" aria-label="{{ site.brand.name }} home">
       {% if site.brand.logo %}
-      <img src="{{ '/assets/images/logo-light.png' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" class="h-[5.2rem] md:h-[5.85rem] w-auto">
+      <img src="{{ '/assets/images/logo-light.webp' | url }}" alt="{{ site.brand.logoAlt | default(site.brand.name) }}" width="520" height="311" decoding="async" class="h-[5.2rem] md:h-[5.85rem] w-auto">
       {% else %}
       <span class="font-semibold text-lg text-brand-blue">{{ site.brand.name }}</span>
       {% endif %}
