@@ -11,7 +11,18 @@
       {# Left: image, full height, rounded-2xl, shadow #}
       <div class="order-1 relative">
         <div class="rounded-2xl overflow-hidden shadow-xl relative h-full min-h-[280px]">
-          <img src="{{ ('/assets/images/' ~ a.image) | url }}" alt="" class="w-full h-full object-cover rounded-2xl" loading="lazy">
+          {% set aboutBase = (a.image | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | replace('.webp', '')) %}
+          <picture>
+            <source
+              type="image/webp"
+              srcset="
+                {{ ('/assets/images/' ~ aboutBase ~ '-480.webp') | url }} 480w,
+                {{ ('/assets/images/' ~ aboutBase ~ '-768.webp') | url }} 768w,
+                {{ ('/assets/images/' ~ aboutBase ~ '-1024.webp') | url }} 1024w,
+                {{ ('/assets/images/' ~ aboutBase ~ '-1400.webp') | url }} 1400w"
+              sizes="(max-width: 1023px) 100vw, 50vw">
+            <img src="{{ ('/assets/images/' ~ aboutBase ~ '-1024.webp') | url }}" alt="" width="1400" height="933" class="w-full h-full object-cover rounded-2xl" loading="lazy" decoding="async">
+          </picture>
         </div>
       </div>
 

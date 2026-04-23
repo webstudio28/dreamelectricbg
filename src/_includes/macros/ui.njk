@@ -10,7 +10,16 @@
 {# Home services teaser (horizontal strip + desktop grid) #}
 {% macro homeServiceCard(item, extraClass) %}
 <div class="relative flex flex-col overflow-hidden service-card {{ extraClass }}">
-  <img src="{{ ('/assets/images/' ~ item.image) | url }}" alt="{{ item.title }}" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy">
+  {% set serviceBase = (item.image | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | replace('.webp', '')) %}
+  <picture>
+    <source
+      type="image/webp"
+      srcset="
+        {{ ('/assets/images/' ~ serviceBase ~ '-320.webp') | url }} 320w,
+        {{ ('/assets/images/' ~ serviceBase ~ '-480.webp') | url }} 480w"
+      sizes="(max-width: 1023px) 70vw, 25vw">
+    <img src="{{ ('/assets/images/' ~ serviceBase ~ '-480.webp') | url }}" alt="{{ item.title }}" width="640" height="640" class="aspect-square w-full object-cover rounded-xl mb-3" loading="lazy" decoding="async">
+  </picture>
   <h3 class="text-base font-bold text-brand-blue">{{ item.title }}</h3>
   <p class="text-sm text-brand-blue/80 mb-3 flex-1 line-clamp-2">{{ item.shortDescription }}</p>
   <div class="flex items-center gap-3 flex-wrap">

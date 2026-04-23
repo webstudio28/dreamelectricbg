@@ -12,7 +12,17 @@
       {% set categoryPreview = categoryItems[0] if categoryItems and categoryItems.length else null %}
       <a href="{{ ('/produkti/' | url) }}#{{ c.slug }}" class="flex-shrink-0 w-64 md:w-72 rounded-3xl overflow-hidden border border-brand-blue/10 bg-brand-buttercream shadow-sm hover:shadow-lg transition">
         {% if categoryPreview and categoryPreview.image and categoryPreview.image.local %}
-        <img src="{{ ('/assets/images/' ~ categoryPreview.image.local) | url }}" alt="{{ categoryPreview.image.alt | default(c.title) }}" class="w-full aspect-[4/3] object-cover">
+        {% set categoryPreviewBase = (categoryPreview.image.local | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | replace('.webp', '')) %}
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              {{ ('/assets/images/' ~ categoryPreviewBase ~ '-320.webp') | url }} 320w,
+              {{ ('/assets/images/' ~ categoryPreviewBase ~ '-480.webp') | url }} 480w,
+              {{ ('/assets/images/' ~ categoryPreviewBase ~ '-640.webp') | url }} 640w"
+            sizes="(max-width: 1023px) 70vw, 25vw">
+          <img src="{{ ('/assets/images/' ~ categoryPreviewBase ~ '-480.webp') | url }}" alt="{{ categoryPreview.image.alt | default(c.title) }}" width="640" height="480" class="w-full aspect-[4/3] object-cover" loading="lazy" decoding="async">
+        </picture>
         {% else %}
         <div class="w-full aspect-[4/3] bg-gradient-to-br from-brand-blue/15 to-brand-accent/15"></div>
         {% endif %}
@@ -35,7 +45,17 @@
       {% set categoryPreview = categoryItems[0] if categoryItems and categoryItems.length else null %}
       <a href="{{ ('/produkti/' | url) }}#{{ c.slug }}" class="rounded-3xl overflow-hidden border border-brand-blue/10 bg-brand-buttercream shadow-sm hover:shadow-lg transition">
         {% if categoryPreview and categoryPreview.image and categoryPreview.image.local %}
-        <img src="{{ ('/assets/images/' ~ categoryPreview.image.local) | url }}" alt="{{ categoryPreview.image.alt | default(c.title) }}" class="w-full aspect-[4/3] object-cover">
+        {% set categoryPreviewBase = (categoryPreview.image.local | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | replace('.webp', '')) %}
+        <picture>
+          <source
+            type="image/webp"
+            srcset="
+              {{ ('/assets/images/' ~ categoryPreviewBase ~ '-320.webp') | url }} 320w,
+              {{ ('/assets/images/' ~ categoryPreviewBase ~ '-480.webp') | url }} 480w,
+              {{ ('/assets/images/' ~ categoryPreviewBase ~ '-640.webp') | url }} 640w"
+            sizes="(max-width: 1023px) 70vw, 25vw">
+          <img src="{{ ('/assets/images/' ~ categoryPreviewBase ~ '-480.webp') | url }}" alt="{{ categoryPreview.image.alt | default(c.title) }}" width="640" height="480" class="w-full aspect-[4/3] object-cover" loading="lazy" decoding="async">
+        </picture>
         {% else %}
         <div class="w-full aspect-[4/3] bg-gradient-to-br from-brand-blue/15 to-brand-accent/15"></div>
         {% endif %}

@@ -1,6 +1,17 @@
 <section class="relative min-h-[90vh] flex items-center overflow-hidden text-white">
   <div class="absolute inset-0 z-0">
-    <img src="{{ ('/assets/images/' + home.hero.image) | url }}" alt="" width="1600" height="900" sizes="100vw" class="w-full h-full object-cover" fetchpriority="high" loading="eager" decoding="async">
+    {% set heroBase = (home.hero.image | replace('.jpg', '') | replace('.jpeg', '') | replace('.png', '') | replace('.webp', '')) %}
+    <picture>
+      <source
+        type="image/webp"
+        srcset="
+          {{ ('/assets/images/' ~ heroBase ~ '-640.webp') | url }} 640w,
+          {{ ('/assets/images/' ~ heroBase ~ '-960.webp') | url }} 960w,
+          {{ ('/assets/images/' ~ heroBase ~ '-1280.webp') | url }} 1280w,
+          {{ ('/assets/images/' ~ heroBase ~ '-1600.webp') | url }} 1600w"
+        sizes="100vw">
+      <img src="{{ ('/assets/images/' ~ heroBase ~ '-1280.webp') | url }}" alt="" width="1600" height="900" sizes="100vw" class="w-full h-full object-cover" fetchpriority="high" loading="eager" decoding="async">
+    </picture>
     <div class="absolute inset-0 bg-black/65" aria-hidden="true"></div>
   </div>
   <div class="container-custom relative z-10 section-padding w-full">
