@@ -44,5 +44,11 @@
       "projects/4-13kw/FB_IMG_1720532876213.jpg",
       "projects/4-13kw/Screenshot_20260323_011855_Gallery.jpg"
     ]
+  },
+  {
+    "slug": "sistema-80kw-prodajba-tok",
+    "title": "80kw система за продажба на ток",
+    "shortDescription": "80kw система за продажба на ток",
+    "images": ["projects/80kw/80kw2.jpg", "projects/80kw/80kw1.jpg"]
   }
 ]
