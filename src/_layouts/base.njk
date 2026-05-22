@@ -26,6 +26,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
   </noscript>
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | url }}">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18114065904"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18114065904');
+  </script>
 </head>
 <body class="font-sans bg-brand-buttercream"{% if site and site.colors %} style="--color-brand-buttercream: {{ site.colors.buttercream }}; --color-brand-blue: {{ site.colors.britishBlue }}; --color-brand-accent: {{ site.colors.accent }};"{% endif %}>
   {% include "header.njk" %}
@@ -120,7 +127,7 @@
       <div class="p-6 overflow-y-auto flex-1 text-brand-blue/90">
         <div class="space-y-5 text-sm leading-relaxed">
           <p class="text-brand-blue/80">
-            Необходимите бисквитки са винаги включени. Аналитичните (Google Analytics / GA4) са по избор и се използват само за статистика.
+            Необходимите бисквитки и маркетинговият таг <strong>Google Ads</strong> са винаги активни. Аналитичните (Google Analytics / GA4) са по избор и се използват само за статистика.
           </p>
 
           <div class="space-y-3">
@@ -132,6 +139,17 @@
               <label class="inline-flex items-center gap-2 select-none">
                 <input type="checkbox" checked disabled class="h-5 w-5 accent-brand-blue">
                 <span class="text-brand-blue/70 text-sm">Включени</span>
+              </label>
+            </div>
+
+            <div class="flex items-start justify-between gap-4 p-4 rounded-2xl border border-brand-blue/10 bg-brand-buttercream/30">
+              <div>
+                <div class="font-semibold text-brand-blue">Google Ads (маркетинг)</div>
+                <div class="text-brand-blue/70">Измерване на посещения и конверсии от реклами в Google. Тагът се зарежда автоматично при всяко посещение.</div>
+              </div>
+              <label class="inline-flex items-center gap-2 select-none">
+                <input type="checkbox" checked disabled class="h-5 w-5 accent-brand-blue">
+                <span class="text-brand-blue/70 text-sm">Винаги включени</span>
               </label>
             </div>
 
