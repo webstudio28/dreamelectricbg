@@ -46,3 +46,6 @@ jobs:
           local-dir: _site/
           server-dir: ${{ secrets.CPANEL_SERVER_DIR || 'dreamelectricbg/' }}
           dangerous-clean-slate: false
+
+
+          
